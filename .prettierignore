@@ -1,0 +1,46 @@
+# Dependency directories
+node_modules
+
+# Build output (Vite)
+dist
+
+# Vite cache (only used in some setups)
+.vite
+
+# Environment variables
+.env
+.env.*.local
+
+# OS/system files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Version control ignore
+.git
+.gitignore
+
+# Lockfiles (not needed if you want Prettier to skip formatting them)
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# Test snapshots
+*.snap
+
+# Coverage reports
+coverage
+
+# Optional: Public static files (often unformatted)
+public/**/*
+
+# Storybook output
+storybook-static
+
+# Optional: Custom ignore patterns for large/unformatted content
+src/assets/**/*
+
+# Optional: Vitest cache
+node_modules/.vitest
