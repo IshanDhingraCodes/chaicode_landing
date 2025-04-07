@@ -1,1 +1,136 @@
 @import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ----------------------- Font Styles ---------------------------------------- */
+
+@theme {
+  --font-DM-Serif-Text: DM Serif Text, "sans-serif";
+}
+
+/* ----------------------- PreLoader Page Styles ---------------------------------------- */
+
+@theme {
+  --animate-vibrate: vibrate 0.8s ease-in-out infinite alternate;
+  --animate-steam-rise: steam-rise 1.5s infinite ease-out;
+  --animate-bubble-rise: bubble-rise 1.2s infinite ease-in;
+
+  @keyframes vibrate {
+    0% {
+      transform: translateX(-50%) translateY(0);
+    }
+    100% {
+      transform: translateX(-50%) translateY(-5px);
+    }
+  }
+
+  @keyframes steam-rise {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, 10px); /* Start lower */
+    }
+    50% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -20px);
+      /* Rise higher */
+    }
+  }
+
+  @keyframes bubble-rise {
+    0% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+    30% {
+      opacity: 0.7; /* Fade in */
+    }
+    90% {
+      opacity: 0.7; /* Stay visible */
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-60px); /* Rise towards top of cup and fade */
+    }
+  }
+}
+
+@utility preloader {
+  @apply relative flex flex-col items-center w-[150px]  h-[150px];
+}
+
+@utility teacup-area {
+  @apply absolute bottom-[50%]  left-[50%] w-[100px] h-[100px] animate-vibrate;
+  transform: translateX(-50%);
+
+  z-index: 10;
+}
+
+@utility steam {
+  @apply w-[6px] h-[20px] bg-white/85 rounded-[3px] absolute top-[-20px]  z-2 animate-steam-rise;
+}
+
+@utility steam1 {
+  @apply left-[25%];
+  animation-delay: 0s;
+}
+
+@utility steam2 {
+  @apply left-[40%] h-[25px] w-[8px];
+
+  animation-delay: 0.5s;
+}
+
+@utility teacup {
+  @apply w-[80px] h-[70px]   after:content-[''] after:absolute after:top-[15px] after:right-[-18px] after:w-[20px] after:h-[35px] after:border-[3px] after:border-[#6f4e37] after:border-l-0 after:rounded-[0_15px_15px_0/0_15px_15px_0];
+
+  border-radius: 0 0 40px 40px / 0 0 20px 20px;
+  margin: 0 auto;
+  margin-top: 30px;
+  border: 3px solid #6f4e37;
+  border-top: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+@utility chai-liquid-level {
+  @apply absolute bottom-0 left-0 w-full h-[90%] bg-[#a0522d] rounded-[0_0_35px_35px_/_0_0_15px_15px] z-[-1];
+}
+
+@utility bubble {
+  @apply absolute bg-[#ffffff66] rounded-[50%] w-1 h-1 bottom-[5px] opacity-0 animate-bubble-rise;
+}
+
+@utility bubble1 {
+  @apply left-[30%];
+
+  animation-duration: 1s;
+  animation-delay: 0.2s;
+}
+
+@utility bubble2 {
+  @apply left-[50%];
+
+  animation-duration: 1.3s;
+  animation-delay: 0.5s;
+  width: 3px; /* Vary size */
+  height: 3px;
+}
+
+@utility bubble3 {
+  @apply left-[60%];
+  animation-duration: 0.9s;
+  animation-delay: 0.8s;
+}
+
+@utility saucer {
+  @apply w-[100px] h-[15px] bg-[#582d18] rounded-[50%] border-2 border-[#6f4e37] absolute bottom-[52%] sm:left-[49.5%] left-[49%];
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateX(-50%);
+}
