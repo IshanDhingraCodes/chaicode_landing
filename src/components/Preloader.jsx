@@ -17,7 +17,7 @@ const Preloader = () => {
       variants={slideUp}
       initial="initial"
       exit="exit"
-      className="bg-[#3a2e2e] fixed  w-screen flex justify-center items-center h-screen overflow-hidden"
+      className="bg-[#121212] fixed  w-screen flex justify-center items-center h-screen overflow-hidden z-50"
     >
       <div className="teacup-area">
         <div className="steam steam1"></div>
@@ -31,7 +31,7 @@ const Preloader = () => {
       </div>
       <div className="saucer"></div>
 
-      <p className="font-DM-Serif-Text font-bold text-gray-600 tracking-wider text-[min(4vw,40px)] relative top-10">
+      <p className="font-DM-Serif-Text font-bold text-[#c75c1ea3] tracking-wider text-[min(4vw,40px)] relative top-15">
         “Brewing knowledge & chai... just a sip away.”
       </p>
     </motion.div>

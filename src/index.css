@@ -4,14 +4,23 @@
 
 .dark-theme {
   --bg-clr: #0b0500;
+  --text-light: #afafaf;
+  --text: #ffffff;
 }
 
 .light-theme {
   --bg-clr: #ffffff;
+  --text-light: #3c3c3c;
+  --text: #000000;
 }
 
 body {
   background-color: var(--bg-clr);
+  color: var(--text);
+}
+
+.light-text {
+  color: var(--text-light);
 }
 
 /* ----------------------- Font Styles ---------------------------------------- */
@@ -82,7 +91,7 @@ body {
 }
 
 @utility steam {
-  @apply w-[6px] h-[20px] bg-white/85 rounded-[3px] absolute top-[-20px]  z-2 animate-steam-rise;
+  @apply w-[6px] h-[20px] bg-[#F5F5F5] rounded-[3px] absolute top-[10px]  z-2 animate-steam-rise;
 }
 
 @utility steam1 {
@@ -139,7 +148,7 @@ body {
 }
 
 @utility saucer {
-  @apply w-[100px] h-[15px] bg-[#582d18] rounded-[50%] border-2 border-[#6f4e37] absolute bottom-[49%] sm:left-[49.5%] left-[49%];
+  @apply w-[100px] h-[15px] bg-[#7C3A16] rounded-[50%] border-2 border-[#6f4e37] absolute bottom-[49%] sm:left-[49.5%] left-[49%];
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transform: translateX(-50%);
 }
