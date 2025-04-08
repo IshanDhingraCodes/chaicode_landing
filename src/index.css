@@ -139,7 +139,7 @@ body {
 }
 
 @utility saucer {
-  @apply w-[100px] h-[15px] bg-[#582d18] rounded-[50%] border-2 border-[#6f4e37] absolute bottom-[52%] sm:left-[49.5%] left-[49%];
+  @apply w-[100px] h-[15px] bg-[#582d18] rounded-[50%] border-2 border-[#6f4e37] absolute bottom-[49%] sm:left-[49.5%] left-[49%];
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transform: translateX(-50%);
 }
