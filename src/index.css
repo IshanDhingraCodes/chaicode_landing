@@ -1,15 +1,24 @@
 @import "tailwindcss";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* -------------------------- Website Theme --------------------------------------- */
+
+.dark-theme {
+  --bg-clr: #0b0500;
+}
+
+.light-theme {
+  --bg-clr: #ffffff;
+}
+
+body {
+  background-color: var(--bg-clr);
 }
 
 /* ----------------------- Font Styles ---------------------------------------- */
 
 @theme {
   --font-DM-Serif-Text: DM Serif Text, "sans-serif";
+  --font-roboto: Roboto, "sans-serif";
 }
 
 /* ----------------------- PreLoader Page Styles ---------------------------------------- */
