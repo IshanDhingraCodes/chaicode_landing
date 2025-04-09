@@ -17,7 +17,7 @@ const Preloader = () => {
       variants={slideUp}
       initial="initial"
       exit="exit"
-      className="bg-[#121212] fixed  w-screen flex justify-center items-center h-screen overflow-hidden z-50"
+      className="bg-[#121212] fixed  w-screen flex justify-center items-center h-screen overflow-hidden z-900"
     >
       <div className="teacup-area">
         <div className="steam steam1"></div>
