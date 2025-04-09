@@ -1,15 +1,15 @@
 export const NavLinks = [
   {
     title: "Cohorts",
-    link: "",
+    link: "https://courses.chaicode.com/learn",
   },
   {
     title: "Udemy",
-    link: "",
+    link: "https://www.udemy.com/user/hitesh-choudharycom/",
   },
   {
     title: "Docs",
-    link: "",
+    link: "https://docs.chaicode.com/",
   },
   {
     title: "Reviews",
