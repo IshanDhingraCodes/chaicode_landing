@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ThemeConsumer } from "./ThemeContext";
 import { chaicodeBlack, chaicodeWhite } from "../assets";
 import { NavLinks } from "../constants";
@@ -10,151 +10,195 @@ const Navbar = () => {
   const { theme } = ThemeConsumer();
 
   const [isActive, setIsActive] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const variants = {
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const wrapperVariants = {
+    scrolled: { top: "2rem" },
+    default: { top: "0rem" },
+  };
+
+  const navbarVariants = {
+    scrolled: {
+      backgroundColor:
+        theme === "light-theme"
+          ? "rgba(255, 255, 255, 0.9)"
+          : "rgba(20, 20, 20, 0.8)",
+      backdropFilter: "blur(12px)",
+      WebkitBackdropFilter: "blur(12px)",
+      boxShadow:
+        theme === "light-theme"
+          ? "0 4px 20px rgba(0, 0, 0, 0.08)"
+          : "0 4px 20px rgba(255, 255, 255, 0.05)",
+      borderRadius: "1rem",
+      transition: { duration: 0.5 },
+    },
+    default: {
+      backgroundColor: "transparent",
+      backdropFilter: "none",
+      boxShadow: "none",
+      borderRadius: "0",
+      transition: { duration: 0.5 },
+    },
+  };
+
+  const menuVariants = {
     open: {
       height: 420,
       width: 300,
       top: "-3px",
       right: "-3px",
-      transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] },
+      transition: { duration: 0.5 },
     },
     close: {
       width: 100,
       height: 40,
       top: "0px",
       right: "0px",
-      transition: { duration: 0.75, delay: 0.35, ease: [0.76, 0, 0.24, 1] },
+      transition: { duration: 0.5, delay: 0.2 },
     },
   };
 
-  const perspective = {
-    initial: {
-      opacity: 0,
-    },
+  const fadeVariant = {
+    initial: { opacity: 0 },
     enter: (i) => ({
       opacity: 1,
-      transition: { delay: 0.5 + i * 0.1 },
-      ease: [0.215, 0.61, 0.355, 1],
+      transition: { delay: 0.3 + i * 0.1 },
     }),
-    exit: {
-      opacity: 0,
-      transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
-    },
+    exit: { opacity: 0, transition: { duration: 0.3 } },
   };
 
   return (
-    <nav className="xl:max-w-[1280px] px-4  mx-auto py-6 w-full flex justify-between">
-      <a href="/">
-        <img
-          src={theme === "light-theme" ? chaicodeBlack : chaicodeWhite}
-          alt="chaicode"
-          className="w-[124px] h-[32px] "
-        />
-      </a>
-      {/* --------------center links -----------------*/}
-      <ul className="list-none md:flex hidden justify-center gap-14 items-center">
-        {NavLinks.map((nav, i) => (
-          <li
-            key={i}
-            className="light-text cursor-pointer font-normal text-[16px] "
-          >
-            {i === 0 ? (
-              <a href={nav.link} className="flex items-center gap-2">
-                {nav.title} <Blinker />
-              </a>
-            ) : (
-              <a href={nav.link}>{nav.title}</a>
-            )}
-          </li>
-        ))}
-      </ul>
-      <div className=" gap-4 md:flex hidden">
-        <DarkModeToggle />
-        <a
-          href="https://courses.chaicode.com/learn/account/signin"
-          className="bg-amber-600 hover:bg-amber-700  font-semibold py-2 px-6 rounded-xl shadow-md transition duration-200 ease-in-out"
-        >
-          Login
+    <motion.header
+      variants={wrapperVariants}
+      animate={scrolled ? "scrolled" : "default"}
+      className="sticky z-50 px-4 sm:px-6 md:px-8"
+    >
+      <motion.nav
+        className="max-w-screen-xl mx-auto py-4 px-4 sm:px-6 md:px-8 flex justify-between"
+        animate={scrolled ? "scrolled" : "default"}
+        variants={navbarVariants}
+        role="navigation"
+        aria-label="Main Navigation"
+      >
+        {/* Logo */}
+        <a href="/" aria-label="Chaicode Home">
+          <img
+            src={theme === "light-theme" ? chaicodeBlack : chaicodeWhite}
+            alt="Chaicode logo"
+            className="w-[124px] h-[32px]"
+            loading="eager"
+          />
         </a>
-      </div>
 
-      <div className="relative md:hidden ">
-        {/* ---------------------menu data----------------------------------- */}
-        <motion.div
-          variants={variants}
-          animate={isActive ? "open" : "close"}
-          initial="close"
-          className=" bg-amber-600 rounded-3xl absolute backdrop-blur-md shadow-2xl"
-        >
-          <AnimatePresence>
-            {isActive && (
-              <div className="h-full px-8 pt-24 flex flex-col gap-7 box-border">
-                {NavLinks.map((nav, i) => {
-                  return (
+        {/* Desktop Links */}
+        <ul className="hidden md:flex items-center gap-10 list-none">
+          {NavLinks.map((nav, i) => (
+            <li key={i}>
+              <a href={nav.link} className="text-[16px] font-medium  ">
+                {i === 0 ? (
+                  <span className="flex items-center gap-2">
+                    {nav.title} <Blinker />
+                  </span>
+                ) : (
+                  nav.title
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        {/* Desktop Buttons */}
+        <div className="hidden md:flex items-center gap-4">
+          <DarkModeToggle />
+          <a
+            href="https://courses.chaicode.com/learn/account/signin"
+            className="bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-6 rounded-xl transition"
+          >
+            Login
+          </a>
+        </div>
+
+        {/* Mobile Menu */}
+        <div className="relative md:hidden">
+          <motion.div
+            variants={menuVariants}
+            animate={isActive ? "open" : "close"}
+            initial="close"
+            className={`absolute rounded-3xl overflow-hidden ${
+              theme === "light-theme" ? "bg-gray-200" : "bg-amber-600"
+            } shadow-xl backdrop-blur-md`}
+          >
+            <AnimatePresence>
+              {isActive && (
+                <div className="h-full px-6 pt-24 flex flex-col gap-6">
+                  {NavLinks.map((nav, i) => (
                     <motion.div
-                      variants={perspective}
+                      key={i}
+                      custom={i}
+                      variants={fadeVariant}
+                      initial="initial"
                       animate="enter"
                       exit="exit"
-                      initial="initial"
-                      custom={i}
-                      key={i}
                     >
                       <a
                         href={nav.link}
-                        className="text-[#000000] cursor-pointer decoration-0 text-3xl font-bold"
+                        className="text-black text-2xl font-semibold"
                       >
                         {nav.title}
                       </a>
                     </motion.div>
-                  );
-                })}
+                  ))}
 
-                <motion.div
-                  variants={perspective}
-                  animate="enter"
-                  exit="exit"
-                  initial="initial"
-                  custom={NavLinks.length}
-                >
-                  <div className="mt-4 flex justify-between items-center">
-                    <DarkModeToggle />
-                    <a
-                      href="https://courses.chaicode.com/learn/account/signin"
-                      className="bg-[#000000] hover:bg-gray-800  font-semibold py-2 px-6 rounded-xl text-white"
-                    >
-                      Login
-                    </a>
-                  </div>
-                </motion.div>
-              </div>
-            )}
-          </AnimatePresence>
-        </motion.div>
-
-        {/*----------------------- menu button-------------- */}
-        <button
-          aria-label={isActive ? "Close menu" : "Open menu"}
-          onClick={() => {
-            setIsActive(!isActive);
-          }}
-          className="h-[40px] w-[100px]  rounded-3xl cursor-pointer absolute top-0 right-0  overflow-hidden  "
-        >
-          <motion.div
-            animate={{ top: isActive ? "-100%" : "0" }}
-            transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-            className="relative h-full w-full"
-          >
-            <div className="menu">
-              <p>menu</p>
-            </div>
-            <div className="menu">
-              <p>close</p>
-            </div>
+                  <motion.div
+                    custom={NavLinks.length}
+                    variants={fadeVariant}
+                    initial="initial"
+                    animate="enter"
+                    exit="exit"
+                  >
+                    <div className="mt-4 flex justify-between items-center">
+                      <DarkModeToggle />
+                      <a
+                        href="https://courses.chaicode.com/learn/account/signin"
+                        className="bg-black hover:bg-gray-800 text-white font-semibold py-2 px-6 rounded-xl"
+                      >
+                        Login
+                      </a>
+                    </div>
+                  </motion.div>
+                </div>
+              )}
+            </AnimatePresence>
           </motion.div>
-        </button>
-      </div>
-    </nav>
+
+          {/* Toggle Button */}
+          <button
+            aria-label={isActive ? "Close menu" : "Open menu"}
+            onClick={() => setIsActive((prev) => !prev)}
+            className="absolute top-0 right-0 w-[100px] h-[40px] rounded-3xl overflow-hidden"
+          >
+            <motion.div
+              animate={{ top: isActive ? "-100%" : "0%" }}
+              transition={{ duration: 0.4 }}
+              className="relative h-full w-full"
+            >
+              <div className="menu">
+                <p>menu</p>
+              </div>
+              <div className="menu">
+                <p>close</p>
+              </div>
+            </motion.div>
+          </button>
+        </div>
+      </motion.nav>
+    </motion.header>
   );
 };
 

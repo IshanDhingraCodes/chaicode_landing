@@ -4,13 +4,13 @@
 
 .dark-theme {
   --bg-clr: #0b0500;
-  --text-light: #afafaf;
+  --text-light: #dbdbdb;
   --text: #ffffff;
 }
 
 .light-theme {
   --bg-clr: #ffffff;
-  --text-light: #3c3c3c;
+  --text-light: #373737;
   --text: #000000;
 }
 
