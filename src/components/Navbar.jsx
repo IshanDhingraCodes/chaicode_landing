@@ -19,7 +19,7 @@ const Navbar = () => {
   }, []);
 
   const wrapperVariants = {
-    scrolled: { top: "2rem" },
+    scrolled: { top: "1rem" },
     default: { top: "0rem" },
   };
 
@@ -148,9 +148,8 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className="relative md:hidden">
+        <div className="relative md:hidden" ref={menuRef}>
           <motion.div
-            ref={menuRef}
             variants={menuVariants}
             animate={isActive ? "open" : "close"}
             initial="close"
