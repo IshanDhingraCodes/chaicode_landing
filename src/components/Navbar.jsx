@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { ThemeConsumer } from "./ThemeContext";
 import { chaicodeBlack, chaicodeWhite } from "../assets";
 import { NavLinks } from "../constants";
@@ -64,6 +64,26 @@ const Navbar = () => {
     },
   };
 
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsActive(false);
+      }
+    };
+
+    if (isActive) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isActive]);
+
   const fadeVariant = {
     initial: { opacity: 0 },
     enter: (i) => ({
@@ -77,7 +97,7 @@ const Navbar = () => {
     <motion.header
       variants={wrapperVariants}
       animate={scrolled ? "scrolled" : "default"}
-      className="sticky z-50 px-4 sm:px-6 md:px-8 "
+      className="sticky  z-50 px-4 sm:px-6 md:px-8 "
     >
       <motion.nav
         className="max-w-screen-xl mx-auto py-4 px-4 sm:px-6 md:px-8 flex justify-between"
@@ -130,6 +150,7 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <div className="relative md:hidden">
           <motion.div
+            ref={menuRef}
             variants={menuVariants}
             animate={isActive ? "open" : "close"}
             initial="close"

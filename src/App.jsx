@@ -1,24 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar, Preloader, Hero } from "./components";
 import { AnimatePresence } from "motion/react";
 import Lenis from "lenis";
 import { ThemeProvider } from "./components/ThemeContext";
 
 const App = () => {
-  // Initialize Lenis for smooth scrolling
-  const lenis = new Lenis();
-  function raf(time) {
-    lenis.raf(time);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const lenis = new Lenis();
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
     requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
 
-  //Initialize Preloader
-  const [isLoading, SetIsLoading] = useState(true);
-
-  setTimeout(() => {
-    SetIsLoading(false);
-  }, 2000);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
 
   return (
     <ThemeProvider>
@@ -26,8 +26,13 @@ const App = () => {
         <AnimatePresence mode="wait">
           {isLoading && <Preloader />}
         </AnimatePresence>
-        <Navbar />
-        <Hero />
+
+        {!isLoading && (
+          <>
+            <Navbar />
+            <Hero />
+          </>
+        )}
       </main>
     </ThemeProvider>
   );

@@ -16,14 +16,14 @@ const DarkModeToggle = () => {
           onChange={toggleTheme}
           aria-label="Toggle dark mode"
         />
-        {/* Background */}
+        {/* ------------------Background---------------- */}
         <div
           className={`w-full h-full rounded-full border shadow-inner transition-colors duration-300 ${
             isDark ? "bg-white" : "bg-amber-600"
           }`}
         ></div>
 
-        {/* Icon */}
+        {/* --------------------Icon------------------------- */}
         <div
           className={`absolute top-0 left-0 w-5 h-5 rounded-full border transform transition-transform duration-300 flex items-center justify-center ${
             isDark
