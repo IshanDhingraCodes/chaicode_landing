@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { DarkMode, Navbar, Preloader } from "./components";
+import { Navbar, Preloader, Hero } from "./components";
 import { AnimatePresence } from "motion/react";
 import Lenis from "lenis";
 import { ThemeProvider } from "./components/ThemeContext";
@@ -22,11 +22,12 @@ const App = () => {
 
   return (
     <ThemeProvider>
-      <main className="font-roboto">
+      <main className="font-roboto select-none">
         <AnimatePresence mode="wait">
           {isLoading && <Preloader />}
         </AnimatePresence>
         <Navbar />
+        <Hero />
       </main>
     </ThemeProvider>
   );

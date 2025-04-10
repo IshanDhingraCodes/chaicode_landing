@@ -43,7 +43,7 @@ const Navbar = () => {
       backdropFilter: "none",
       boxShadow: "none",
       borderRadius: "0",
-      transition: { duration: 0.5 },
+      transition: { duration: 0.3 },
     },
   };
 
@@ -53,14 +53,14 @@ const Navbar = () => {
       width: 300,
       top: "-3px",
       right: "-3px",
-      transition: { duration: 0.5 },
+      transition: { duration: 0.3 },
     },
     close: {
       width: 100,
       height: 40,
       top: "0px",
       right: "0px",
-      transition: { duration: 0.5, delay: 0.2 },
+      transition: { duration: 0.3, delay: 0.2 },
     },
   };
 
@@ -68,7 +68,7 @@ const Navbar = () => {
     initial: { opacity: 0 },
     enter: (i) => ({
       opacity: 1,
-      transition: { delay: 0.3 + i * 0.1 },
+      transition: { delay: 0.2 + i * 0.1 },
     }),
     exit: { opacity: 0, transition: { duration: 0.3 } },
   };
@@ -77,7 +77,7 @@ const Navbar = () => {
     <motion.header
       variants={wrapperVariants}
       animate={scrolled ? "scrolled" : "default"}
-      className="sticky z-50 px-4 sm:px-6 md:px-8"
+      className="sticky z-50 px-4 sm:px-6 md:px-8 "
     >
       <motion.nav
         className="max-w-screen-xl mx-auto py-4 px-4 sm:px-6 md:px-8 flex justify-between"
@@ -100,7 +100,10 @@ const Navbar = () => {
         <ul className="hidden md:flex items-center gap-10 list-none">
           {NavLinks.map((nav, i) => (
             <li key={i}>
-              <a href={nav.link} className="text-[16px] font-medium  ">
+              <a
+                href={nav.link}
+                className="text-[16px] light-text font-medium  "
+              >
                 {i === 0 ? (
                   <span className="flex items-center gap-2">
                     {nav.title} <Blinker />

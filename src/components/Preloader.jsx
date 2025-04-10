@@ -31,9 +31,9 @@ const Preloader = () => {
       </div>
       <div className="saucer"></div>
 
-      <p className="font-DM-Serif-Text font-bold text-[#c75c1ea3] tracking-wider text-[min(4vw,40px)] relative top-15">
+      {/* <p className="font-DM-Serif-Text font-bold text-[#c75c1ea3] tracking-wider text-[min(4vw,40px)] relative top-15">
         “Brewing knowledge & chai... just a sip away.”
-      </p>
+      </p> */}
     </motion.div>
   );
 };

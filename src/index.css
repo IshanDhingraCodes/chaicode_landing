@@ -4,13 +4,13 @@
 
 .dark-theme {
   --bg-clr: #0b0500;
-  --text-light: #dbdbdb;
+  --text-light: #ababab;
   --text: #ffffff;
 }
 
 .light-theme {
   --bg-clr: #ffffff;
-  --text-light: #373737;
+  --text-light: #474747;
   --text: #000000;
 }
 
@@ -23,11 +23,54 @@ body {
   color: var(--text-light);
 }
 
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    black 40%,
+    transparent 100%
+  );
+  background-size: 80px 80px;
+}
+
+.darkbg-grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    black 40%,
+    transparent 100%
+  );
+  background-size: 80px 80px;
+}
+
 /* ----------------------- Font Styles ---------------------------------------- */
 
 @theme {
   --font-DM-Serif-Text: DM Serif Text, "sans-serif";
   --font-roboto: Roboto, "sans-serif";
+}
+
+.text-gradient {
+  background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #fff4e0 0.89%,
+    #ffe0b2 17.23%,
+    #ffcc80 42.04%,
+    #ffb74d 55.12%,
+    #ffa726 71.54%,
+    #fb8c00 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px 1px 2px rgba(255, 119, 0, 0.3);
 }
 
 /* ----------------------- PreLoader Page Styles ---------------------------------------- */
