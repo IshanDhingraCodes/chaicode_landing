@@ -117,14 +117,14 @@ const Hero = () => {
 
         {/* ----------------video ----------------------*/}
         <motion.div
-          className="mt-16 w-full max-w-3xl aspect-video border-4  border-amber-600 rounded-3xl"
+          className="mt-16 w-full max-w-3xl aspect-video border-4  border-amber-600 rounded-3xl z-15 relative"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
         >
           {!showVideo ? (
             <button
-              className="w-full h-full relative group"
+              className="w-full h-full relative group z-[20] pointer-events-auto"
               onClick={() => setShowVideo(true)}
             >
               <img
