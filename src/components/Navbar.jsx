@@ -117,7 +117,7 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Links */}
-        <ul className="hidden md:flex items-center gap-10 list-none">
+        <ul className="hidden md:flex items-center gap-8  list-none">
           {NavLinks.map((nav, i) => (
             <li key={i}>
               <a

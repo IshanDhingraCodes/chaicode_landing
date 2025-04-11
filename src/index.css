@@ -1,3 +1,50 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../src/assets/fonts/Roboto-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../src/assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../src/assets/fonts/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../src/assets/fonts/Roboto-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../src/assets/fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../src/assets/fonts/Roboto-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
 @import "tailwindcss";
 
 /* -------------------------- Website Theme --------------------------------------- */
@@ -52,7 +99,6 @@ body {
 /* ----------------------- Font Styles ---------------------------------------- */
 
 @theme {
-  --font-DM-Serif-Text: DM Serif Text, "sans-serif";
   --font-roboto: Roboto, "sans-serif";
 }
 
@@ -149,12 +195,12 @@ body {
 }
 
 @utility teacup {
-  @apply w-[80px] h-[70px]   after:content-[''] after:absolute after:top-[15px] after:right-[-18px] after:w-[20px] after:h-[35px] after:border-[3px] after:border-[#6f4e37] after:border-l-0 after:rounded-[0_15px_15px_0/0_15px_15px_0];
+  @apply w-[80px] h-[70px]   after:content-[''] after:absolute after:top-[15px] after:right-[-18px] after:w-[20px] after:h-[35px] after:border-[3px] after:border-[#977258] after:border-l-0 after:rounded-[0_15px_15px_0/0_15px_15px_0];
 
   border-radius: 0 0 40px 40px / 0 0 20px 20px;
   margin: 0 auto;
   margin-top: 30px;
-  border: 3px solid #6f4e37;
+  border: 3px solid #977258;
   border-top: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   position: relative;
@@ -191,7 +237,7 @@ body {
 }
 
 @utility saucer {
-  @apply w-[100px] h-[15px] bg-[#7C3A16] rounded-[50%] border-2 border-[#6f4e37] absolute bottom-[49%] sm:left-[49.5%] left-[49%];
+  @apply w-[100px] h-[15px] bg-[#7C3A16] rounded-[50%] border-2 border-[#977258] absolute bottom-[49%] sm:left-[49.5%] left-[49%];
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transform: translateX(-50%);
 }
@@ -205,4 +251,8 @@ body {
     position: absolute;
     top: 100%;
   }
+}
+
+@utility interactiveElement {
+  @apply absolute -translate-x-1/2 flex items-center shadow-lg hover:shadow-[0_4px_16px_rgba(249,115,22,0.4)] gap-2 p-3 rounded-xl  hover:scale-105 transition-transform duration-300 pointer-events-auto;
 }

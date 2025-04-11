@@ -18,17 +18,19 @@ const DarkModeToggle = () => {
         />
         {/* ------------------Background---------------- */}
         <div
-          className={`w-full h-full rounded-full border shadow-inner transition-colors duration-300 ${
-            isDark ? "bg-white" : "bg-amber-600"
+          className={`w-full h-full rounded-full shadow-inner transition-colors duration-300 border ${
+            isDark
+              ? "bg-neutral-800 border-neutral-600"
+              : "bg-amber-300 border-neutral-400"
           }`}
         ></div>
 
         {/* --------------------Icon------------------------- */}
         <div
-          className={`absolute top-0 left-0 w-5 h-5 rounded-full border transform transition-transform duration-300 flex items-center justify-center ${
+          className={`absolute top-0 left-0 w-5 h-5 rounded-full  transform transition-transform duration-300 flex items-center justify-center shadow-lg  ${
             isDark
-              ? "translate-x-5 bg-amber-600 text-gray-950"
-              : "bg-white text-amber-600"
+              ? "translate-x-5 bg-amber-400 text-black"
+              : "bg-amber-500 text-white"
           }`}
         >
           {isDark ? (
