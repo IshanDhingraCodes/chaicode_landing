@@ -4,5 +4,5 @@ import DarkMode from "./DarkMode";
 import Blinker from "./Blinker";
 import Hero from "./Hero";
 import CTA from "./CTA";
-
-export { Preloader, Navbar, DarkMode, Blinker, Hero, CTA };
+import TwitterTestimonials from "./Testimonial";
+export { Preloader, Navbar, DarkMode, Blinker, Hero, CTA, TwitterTestimonials };

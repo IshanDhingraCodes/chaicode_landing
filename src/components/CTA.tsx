@@ -5,7 +5,7 @@ import Blinker from "./Blinker";
 const CTA = ({ text, className }) => {
   const { theme } = ThemeConsumer();
   return (
-    <a href="https://courses.chaicode.com/learn">
+    <a href="https://courses.chaicode.com/learn/view-all?show=batch&type=17">
       <button
         className={`relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-orange-300 focus:ring-offset-2   ${theme === "light-theme" ? "focus:ring-offset-slate-50" : "focus:ring-offset-slate-900"} ${className}`}
       >
