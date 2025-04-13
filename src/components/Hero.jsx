@@ -84,7 +84,7 @@ const Hero = () => {
       />
       <main className="py-24 relative flex flex-col justify-center items-center">
         <motion.p
-          className="inline-flex py-2 px-4 bg-radial from-orange-400 from-40% to-orange-700 rounded-full tracking-wider font-semibold"
+          className="inline-flex py-2 px-4 radial-bg rounded-full tracking-wider font-semibold"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6, ease: "easeOut" }}

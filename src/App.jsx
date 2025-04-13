@@ -5,6 +5,7 @@ import {
   Hero,
   TwitterTestimonials,
   LogoMarquee,
+  Cohorts,
 } from "./components";
 import { AnimatePresence } from "motion/react";
 import Lenis from "lenis";
@@ -39,6 +40,7 @@ const App = () => {
             <Hero />
             <TwitterTestimonials />
             <LogoMarquee />
+            <Cohorts />
           </>
         )}
       </main>

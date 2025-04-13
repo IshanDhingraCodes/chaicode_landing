@@ -6,6 +6,7 @@ import Hero from "./Hero";
 import CTA from "./CTA";
 import TwitterTestimonials from "./Testimonial";
 import LogoMarquee from "./LogoMarquee";
+import Cohorts from "./Cohorts";
 
 export {
   Preloader,
@@ -16,4 +17,5 @@ export {
   CTA,
   TwitterTestimonials,
   LogoMarquee,
+  Cohorts,
 };
