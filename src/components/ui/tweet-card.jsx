@@ -15,13 +15,23 @@ function TweetCard({ url, index }) {
   useEffect(() => {
     if (isInView && window.twttr) {
       window.twttr.widgets.load(ref.current);
+
+      const maxWait = setTimeout(() => {
+        setLoaded(true);
+      }, 5000);
+
       const interval = setInterval(() => {
         const iframe = ref.current?.querySelector("iframe");
         if (iframe) {
           setLoaded(true);
           clearInterval(interval);
+          clearTimeout(maxWait);
         }
       }, 200);
+      return () => {
+        clearInterval(interval);
+        clearTimeout(maxWait);
+      };
     }
   }, [isInView]);
 

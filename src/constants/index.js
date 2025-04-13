@@ -1,3 +1,13 @@
+import {
+  figma,
+  github,
+  google,
+  microsoft,
+  netflix,
+  notion,
+  slack,
+} from "../assets";
+
 export const NavLinks = [
   {
     title: "Cohorts",
@@ -24,3 +34,5 @@ export const tweetUrls = [
   "https://twitter.com/indalsingh95/status/1910400980593574204",
   "https://twitter.com/csakoushik/status/1910028187192435136",
 ];
+
+export const logos = [figma, github, google, microsoft, netflix, notion, slack];

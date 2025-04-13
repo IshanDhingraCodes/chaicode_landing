@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Navbar, Preloader, Hero, TwitterTestimonials } from "./components";
+import {
+  Navbar,
+  Preloader,
+  Hero,
+  TwitterTestimonials,
+  LogoMarquee,
+} from "./components";
 import { AnimatePresence } from "motion/react";
 import Lenis from "lenis";
 import { ThemeProvider } from "./components/ThemeContext";
@@ -32,6 +38,7 @@ const App = () => {
             <Navbar />
             <Hero />
             <TwitterTestimonials />
+            <LogoMarquee />
           </>
         )}
       </main>
