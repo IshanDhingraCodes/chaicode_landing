@@ -7,6 +7,7 @@ import CTA from "./CTA";
 import TwitterTestimonials from "./Testimonial";
 import LogoMarquee from "./LogoMarquee";
 import Cohorts from "./Cohorts";
+import Features from "./Features";
 
 export {
   Preloader,
@@ -18,4 +19,5 @@ export {
   TwitterTestimonials,
   LogoMarquee,
   Cohorts,
+  Features,
 };

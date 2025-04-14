@@ -9,5 +9,17 @@ import microsoft from "./Microsoft.svg"
 import netflix from "./Netflix.svg"
 import notion from "./Notion.png"
 import slack from "./Slack.svg"
+import bounty from "./bounty.png"
+import bountycode from "./bounty-code.png"
+import hostel from "./hostel.png"
+import hostelcode from "./hostel-code.png"
+import leetlab from "./leetlab.png"
+import leetlabcode from "./leetlab-code.png"
+import peer from "./peer.png"
+import peercode from "./peer-code.png"
+import professional from "./professional.png"
+import professionalcode from "./professional-code.png"
+import revision from "./revision.png"
+import revisioncode from "./revision-code.png"
 
-export {chaicodeBlack , chaicodeWhite , chaigray , chaiwhite , figma , github , google , microsoft , netflix , notion , slack}
+export {chaicodeBlack, chaicodeWhite, chaigray, chaiwhite, figma, github, google, microsoft, netflix, notion, slack, bounty, hostel, leetlab, peer, professional, revision, bountycode, hostelcode, leetlabcode, peercode, professionalcode, revisioncode}

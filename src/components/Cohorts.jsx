@@ -197,7 +197,7 @@ const Cohorts = () => {
             ))}
           </div>
 
-          {/* Navigation Buttons (Remain the same) */}
+          {/* Navigation Buttons */}
           <button
             className="absolute top-1/2 -translate-y-1/2 left-1.5 sm:left-3 md:left-5 z-20 bg-black/50 hover:bg-black/80 text-white border-none p-0 text-lg sm:text-2xl cursor-pointer rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex justify-center items-center transition-colors duration-300 ease-linear"
             onClick={goToPrev}

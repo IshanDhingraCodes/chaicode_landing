@@ -6,6 +6,18 @@ import {
   netflix,
   notion,
   slack,
+  professional,
+  professionalcode,
+  peer,
+  peercode,
+  revision,
+  revisioncode,
+  bounty,
+  bountycode,
+  hostel,
+  hostelcode,
+  leetlab,
+  leetlabcode,
 } from "../assets";
 
 export const NavLinks = [
@@ -97,5 +109,44 @@ export const cohorts = [
     discountedPrize: "299 INR",
     discounte: "50%",
     link: "https://courses.chaicode.com/learn/batch/Coding-Hero-2025",
+  },
+];
+
+export const featureBlock = [
+  {
+    title: "Taught by Professionals",
+    description:
+      "Our cohorts are being taught by top industry experts and educators.",
+    images: [professional, professionalcode],
+  },
+  {
+    title: "Bounties",
+    description:
+      "Earn rewards, from cash to Macbook. Keep you motivated to work hard.",
+    images: [bounty, bountycode],
+  },
+  {
+    title: "Coding Hostels",
+    description:
+      "There is nothing like late night discussion with fellow learners and solving bugs.",
+    images: [hostel, hostelcode],
+  },
+  {
+    title: "Peer Code Reviews",
+    description:
+      "With our internal tools like Masterji, every code assignment gets feedback to improve your code.",
+    images: [peer, peercode],
+  },
+  {
+    title: "Leet Lab",
+    description:
+      "Our in-house build LeetCode style platform that helps you to understand foundations of programming language.",
+    images: [leetlab, leetlabcode],
+  },
+  {
+    title: "Revision Classes",
+    description:
+      "We have so many peer classes by fellow learners that you get so many chances to learn that topic.",
+    images: [revision, revisioncode],
   },
 ];
