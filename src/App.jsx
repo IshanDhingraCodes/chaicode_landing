@@ -30,22 +30,20 @@ const App = () => {
 
   return (
     <ThemeProvider>
-      <main className="font-roboto select-none">
-        <AnimatePresence mode="wait">
-          {isLoading && <Preloader />}
-        </AnimatePresence>
+      <AnimatePresence mode="wait">
+        {isLoading && <Preloader />}
+      </AnimatePresence>
 
-        {!isLoading && (
-          <>
-            <Navbar />
-            <Hero />
-            <TwitterTestimonials />
-            <LogoMarquee />
-            <Cohorts />
-            <Features />
-          </>
-        )}
-      </main>
+      {!isLoading && (
+        <main className="font-roboto select-none max-w-[1440px] mx-auto">
+          <Navbar />
+          <Hero />
+          <TwitterTestimonials />
+          <LogoMarquee />
+          <Cohorts />
+          <Features />
+        </main>
+      )}
     </ThemeProvider>
   );
 };

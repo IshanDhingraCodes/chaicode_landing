@@ -20,8 +20,8 @@ export default function TwitterTestimonials() {
   }, []);
 
   return (
-    <section className="relative  w-full h-screen flex items-center justify-center">
-      <div className="relative w-full  h-full flex flex-col items-center  justify-start pt-30 md:pt-0 md:justify-center  md:pb-[50%] lg:pb-[30%]">
+    <section className="relative  w-full  md:mt-10 flex items-center justify-center">
+      <div className="relative w-full  h-full flex flex-col items-center  justify-start  md:justify-center  md:pb-[50%] lg:pb-[30%]">
         <div className="max-w-xl mx-auto text-center">
           <p className="md:text-lg light-text mx-4 ">
             Love that we get from our community
@@ -38,15 +38,15 @@ export default function TwitterTestimonials() {
           let extraclass = "";
 
           if (index === 0) {
-            extraclass = "lg:block top-[35%] lg:left-[3%] ";
+            extraclass = "lg:block top-[25%] lg:left-[3%] ";
           } else if (index === 1) {
-            extraclass = "md:block  top-[40%] left-[5%] lg:left-[22%] z-2";
+            extraclass = "md:block  top-[30%] left-[5%] lg:left-[22%] z-2";
           } else if (index === 2) {
-            extraclass = "md:block top-[45%] left-1/2 -translate-x-1/2 z-3";
+            extraclass = "md:block top-[35%] left-1/2 -translate-x-1/2 z-3";
           } else if (index === 3) {
-            extraclass = "md:block top-[40%] right-[5%] lg:right-[22%] z-2";
+            extraclass = "md:block top-[30%] right-[5%] lg:right-[22%] z-2";
           } else if (index === 4) {
-            extraclass = "lg:block top-[35%] lg:right-[3%]";
+            extraclass = "lg:block top-[25%] lg:right-[3%]";
           }
 
           return (

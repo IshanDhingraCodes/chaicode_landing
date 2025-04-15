@@ -119,12 +119,11 @@ body {
   text-shadow: 1px 1px 2px rgba(255, 119, 0, 0.3);
 }
 
-/* ----------------------- PreLoader Page Styles ---------------------------------------- */
-
 @theme {
   --animate-vibrate: vibrate 0.8s ease-in-out infinite alternate;
   --animate-steam-rise: steam-rise 1.5s infinite ease-out;
   --animate-bubble-rise: bubble-rise 1.2s infinite ease-in;
+  --animate-marquee-infinite: marquee 55s linear infinite;
 
   @keyframes vibrate {
     0% {
@@ -164,6 +163,15 @@ body {
     100% {
       opacity: 0;
       transform: translateY(-60px); /* Rise towards top of cup and fade */
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translate(0%, 0);
+    }
+    100% {
+      transform: translate(-50%, 0);
     }
   }
 }

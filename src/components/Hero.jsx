@@ -10,7 +10,7 @@ const Hero = () => {
 
   const { theme } = ThemeConsumer();
   return (
-    <section className="relative min-h-[calc(100vh-5rem)] px-4 py-20 overflow-hidden">
+    <section className="relative min-h-[calc(100vh-5rem)] px-4 md:pt-20 overflow-hidden">
       <div
         className={`absolute inset-0 pointer-events-none ${theme === "light-theme" ? "bg-grid-pattern opacity-100" : "darkbg-grid-pattern opacity-80"}`}
       />

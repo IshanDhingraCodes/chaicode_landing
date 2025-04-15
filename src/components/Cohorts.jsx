@@ -3,8 +3,11 @@ import { motion } from "motion/react";
 import { cohorts } from "../constants";
 import { CalendarDays, Clock } from "lucide-react";
 import Blinker from "./Blinker";
+import { ThemeConsumer } from "./ThemeContext";
 
 const Cohorts = () => {
+  const { theme } = ThemeConsumer();
+
   const [showVideo, setShowVideo] = useState(false);
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -89,19 +92,19 @@ const Cohorts = () => {
           </p>
         </div>
         {/* Carousel Container*/}
-        <div className="flex justify-center items-center relative w-full max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto my-6 sm:my-10 h-[500px] sm:h-[570px] md:h-[610px] lg:h-[720px] overflow-hidden py-3 sm:py-5 box-border">
+        <div className="flex justify-center items-center relative w-full max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto my-6 sm:my-10 h-[520px] sm:h-[570px] md:h-[620px] lg:h-[720px] overflow-hidden py-3 sm:py-5 box-border">
           {/* Perspective Wrapper*/}
           <div className="relative w-11/12 sm:w-5/6 md:w-3/4 lg:w-2/3 xl:w-3/5 h-full pointer-events-none perspective-1000">
             {cohorts.map((cohort, index) => (
               <motion.div
                 key={index}
-                className="absolute w-full h-full top-0 left-0 shadow-lg cursor-pointer select-none pointer-events-auto box-border origin-center overflow-hidden rounded-lg radial-bg"
+                className={`absolute w-full h-full top-0 left-0 shadow-lg cursor-pointer select-none pointer-events-auto box-border origin-center overflow-hidden rounded-lg  ${theme === "light-theme" ? "bg-[#FFFAF0] shadow-lg border border-slate-200" : " bg-[#3D2B1F]"}`}
                 variants={variants}
                 initial={false}
                 animate={getVariant(index)}
               >
                 <div className="flex flex-col gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg h-full overflow-y-auto">
-                  <div className="w-full aspect-video rounded-lg overflow-hidden flex-shrink-0 bg-black">
+                  <div className="w-full aspect-video rounded-lg overflow-hidden flex-shrink-0 ">
                     {!(showVideo && index === activeIndex) ? (
                       <button
                         className="w-full h-full relative group z-[20] pointer-events-auto"
@@ -146,25 +149,35 @@ const Cohorts = () => {
                   </div>
 
                   {/* Text Section */}
-                  <div className="w-full flex flex-col justify-between text-white py-2 flex-grow">
+                  <div className="w-full flex flex-col justify-between  py-2 flex-grow">
                     <div>
                       <h3 className="text-3xl md:text-4xl font-bold flex justify-between items-center">
-                        <div className="truncate whitespace-nowrap overflow-hidden text-ellipsis max-w-[calc(100%-120px)]">
+                        <div
+                          className={`truncate whitespace-nowrap overflow-hidden text-ellipsis max-w-[calc(100%-120px)]  ${theme === "light-theme" ? "text-[#3D2B1F]" : " text-[#FFDAB9]"}`}
+                        >
                           {cohort.heading}
                         </div>
-                        <div className="px-1 py-1 md:px-2 sm:py-2 bg-black/70 flex justify-center items-center text-sm gap-2 rounded-xl whitespace-nowrap">
+                        <div
+                          className={`px-1 py-1 md:px-2 sm:py-2  flex justify-center items-center text-sm gap-2 rounded-xl whitespace-nowrap ${theme === "light-theme" ? "bg-orange-950 text-white" : "bg-black/70"}`}
+                        >
                           Live <Blinker />
                         </div>
                       </h3>
-                      <p className="text-xs sm:text-sm text-black/60 font-semibold mt-1">
+                      <p
+                        className={`text-xs sm:text-sm  font-semibold mt-1 ${theme === "light-theme" ? "text-slate-600" : " text-[#FFFAF0]"}`}
+                      >
                         {cohort.subHeading}
                       </p>
                       <div className="mt-3 sm:mt-4">
-                        <p className="text-sm font-bold flex  items-center gap-2">
+                        <p
+                          className={`text-sm font-bold flex  items-center gap-2  ${theme === "light-theme" ? "text-[#3D2B1F]" : " text-[#FFDAB9]"}`}
+                        >
                           <CalendarDays className="w-4 h-4" />
                           {cohort.starts}
                         </p>
-                        <p className="text-sm text-black/60 font-bold mt-2 flex items-center gap-2">
+                        <p
+                          className={`text-sm ${theme === "light-theme" ? "text-slate-600" : " text-[#FFFAF0]"} font-bold mt-2 flex items-center gap-2`}
+                        >
                           <Clock className="w-4 h-4" />
                           {cohort.tenure}
                         </p>
@@ -174,19 +187,27 @@ const Cohorts = () => {
                     {/* Bottom part: Pricing */}
                     <div className="mt-3 sm:mt-4">
                       <div className="flex items-baseline gap-2 sm:gap-3">
-                        <p className="text-base sm:text-lg font-bold text-white">
+                        <p
+                          className={`text-base sm:text-lg font-bold ${theme === "light-theme" ? "text-[#3D2B1F]" : " text-[#FFDAB9]"}`}
+                        >
                           {cohort.discountedPrize}
                         </p>
-                        <p className="line-through text-xs sm:text-sm text-black/60 font-semibold">
+                        <p
+                          className={`line-through text-xs sm:text-sm ${theme === "light-theme" ? "text-slate-600" : " text-[#FFFAF0]"} font-semibold`}
+                        >
                           {cohort.realPrize}
                         </p>
                       </div>
-                      <p className="text-xs sm:text-sm text-black/80 font-bold mb-2">
+                      <p
+                        className={`text-xs sm:text-sm ${theme === "light-theme" ? "text-slate-600" : " text-[#FFFAF0]"} font-bold mb-2`}
+                      >
                         Save {cohort.discounte}
                       </p>
                       <a
                         href={cohort.link}
-                        className="flex items-center justify-center px-4 py-2 bg-amber-500 rounded-md font-bold tracking-wide"
+                        className={
+                          "flex items-center text-white justify-center px-4 py-2 radial-bg rounded-md font-bold tracking-wide hover:scale-102 transition duration-200 ease-in-out transform filter"
+                        }
                       >
                         Learn More
                       </a>
