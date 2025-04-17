@@ -53,12 +53,16 @@
   --bg-clr: #0b0500;
   --text-light: #ababab;
   --text: #ffffff;
+  --feature-bg: #150d06;
+  --feature-heading: #ffdab9;
 }
 
 .light-theme {
   --bg-clr: #ffffff;
-  --text-light: #474747;
+  --text-light: #666666;
   --text: #000000;
+  --feature-bg: #fff4e6;
+  --feature-heading: #7b3f00;
 }
 
 body {
@@ -68,6 +72,14 @@ body {
 
 .light-text {
   color: var(--text-light);
+}
+
+.feature-bg {
+  background-color: var(--feature-bg);
+}
+
+.feature-heading {
+  color: var(--feature-heading);
 }
 
 .bg-grid-pattern {

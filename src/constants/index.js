@@ -7,17 +7,11 @@ import {
   notion,
   slack,
   professional,
-  professionalcode,
   peer,
-  peercode,
   revision,
-  revisioncode,
   bounty,
-  bountycode,
   hostel,
-  hostelcode,
   leetlab,
-  leetlabcode,
 } from "../assets";
 
 export const NavLinks = [
@@ -114,39 +108,46 @@ export const cohorts = [
 
 export const featureBlock = [
   {
-    title: "Taught by Professionals",
+    title: "Taught By Professionals",
     description:
-      "Our cohorts are being taught by top industry experts and educators.",
-    images: [professional, professionalcode],
+      "Our cohorts are being taught by top industry experts and educators",
+    images: professional,
   },
   {
     title: "Bounties",
     description:
-      "Earn rewards, from cash to Macbook. Keep you motivated to work hard.",
-    images: [bounty, bountycode],
+      "Earn rewards, from cash to Macbook. Keep you motivated to work hard",
+    images: bounty,
   },
   {
     title: "Coding Hostels",
     description:
-      "There is nothing like late night discussion with fellow learners and solving bugs.",
-    images: [hostel, hostelcode],
+      "There is nothing like late night discussion with fellow learners and solving bugs",
+    images: hostel,
   },
   {
     title: "Peer Code Reviews",
     description:
-      "With our internal tools like Masterji, every code assignment gets feedback to improve your code.",
-    images: [peer, peercode],
+      "With our internal tools like Masterji, every code assignment gets feedback to improve your code",
+    images: peer,
   },
   {
     title: "Leet Lab",
     description:
-      "Our in-house build LeetCode style platform that helps you to understand foundations of programming language.",
-    images: [leetlab, leetlabcode],
+      "Our in-house build LeetCode style platform that helps you to understand foundations of programming language",
+    images: leetlab,
   },
   {
     title: "Revision Classes",
     description:
-      "We have so many peer classes by fellow learners that you get so many chances to learn that topic.",
-    images: [revision, revisioncode],
+      "We have so many peer classes by fellow learners that you get so many chances to learn that topic",
+    images: revision,
+  },
+  {
+    title: "Alumni Network and job listings",
+    description:
+      "The alumni Network that you always wished for in your college. We have a dedicated platform where students get to know each other, do projects, make agencies and join Hackathons.",
+    subDescription:
+      "Our HR team also post regular job updates that you can apply directly whenever you are ready",
   },
 ];

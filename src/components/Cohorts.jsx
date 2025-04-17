@@ -98,7 +98,7 @@ const Cohorts = () => {
             {cohorts.map((cohort, index) => (
               <motion.div
                 key={index}
-                className={`absolute w-full h-full top-0 left-0 shadow-lg cursor-pointer select-none pointer-events-auto box-border origin-center overflow-hidden rounded-lg  ${theme === "light-theme" ? "bg-[#FFFAF0] shadow-lg border border-slate-200" : " bg-[#3D2B1F]"}`}
+                className={`absolute w-full h-full top-0 left-0 shadow-lg select-none pointer-events-auto box-border origin-center overflow-hidden rounded-lg  ${theme === "light-theme" ? "bg-[#FFFAF0] shadow-lg border border-slate-200" : " bg-[#3D2B1F]"}`}
                 variants={variants}
                 initial={false}
                 animate={getVariant(index)}
@@ -119,7 +119,7 @@ const Cohorts = () => {
                           alt="YouTube Video Thumbnail"
                           className="w-full h-full object-cover rounded-2xl "
                         />
-                        <div className="absolute inset-0 bg-black/50 flex items-center justify-center group-hover:bg-black/60 rounded-2xl transition">
+                        <div className="absolute inset-0 bg-black/50 flex items-center justify-center group-hover:bg-black/60 rounded-2xl transition cursor-pointer">
                           <svg
                             className="w-16 h-16 text-white"
                             fill="currentColor"
@@ -205,9 +205,7 @@ const Cohorts = () => {
                       </p>
                       <a
                         href={cohort.link}
-                        className={
-                          "flex items-center text-white justify-center px-4 py-2 radial-bg rounded-md font-bold tracking-wide hover:scale-102 transition duration-200 ease-in-out transform filter"
-                        }
+                        className={`flex items-center justify-center px-4 py-2 rounded-md font-bold tracking-wide hover:scale-102 transition duration-200 ease-in-out transform filter ${theme === "light-theme" ? "bg-radial from-[#77543d] from-40% to-[#503929] text-[#FFFAF0]" : "bg-radial  from-[#FFDAB9] from-40% to-[#FFFAF0] text-[#3D2B1F]"}`}
                       >
                         Learn More
                       </a>
