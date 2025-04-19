@@ -3,13 +3,13 @@ import { logos } from "../constants/";
 
 const LogoMarquee = () => {
   return (
-    <div className="mt-52">
+    <div className="md:mt-52">
       <div className="max-w-xl mx-auto text-center my-10 tracking-wider">
-        <p className="sm:text-lg text-sm light-text mx-4 ">
+        <p className="sm:text-lg text-sm text-lighe mx-4 ">
           Our students are not only working in{" "}
           <span className="text-gradient font-bold">big tech companies</span>
         </p>
-        <p className="sm:text-lg text-sm light-text mx-4 ">
+        <p className="sm:text-lg text-sm text-light mx-4 ">
           but are now <span className="text-gradient font-bold">founders</span>{" "}
           of funded startups and product creators
         </p>

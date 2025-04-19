@@ -1,23 +1,9 @@
-import Preloader from "./Preloader";
 import Navbar from "./Navbar";
-import DarkMode from "./DarkMode";
-import Blinker from "./Blinker";
+import Preloader from "./Preloader";
 import Hero from "./Hero";
-import CTA from "./CTA";
-import TwitterTestimonials from "./Testimonial";
+import Tweets from "./Tweets";
 import LogoMarquee from "./LogoMarquee";
 import Cohorts from "./Cohorts";
 import Features from "./Features";
 
-export {
-  Preloader,
-  Navbar,
-  DarkMode,
-  Blinker,
-  Hero,
-  CTA,
-  TwitterTestimonials,
-  LogoMarquee,
-  Cohorts,
-  Features,
-};
+export { Preloader, Navbar, Hero, Tweets, LogoMarquee, Cohorts, Features };

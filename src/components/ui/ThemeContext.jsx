@@ -23,7 +23,7 @@ export function ThemeProvider({ children }) {
   );
 }
 
-// Custom hook component (just providing theme) 
+// Custom hook component (just providing theme)
 export function ThemeConsumer() {
   const context = useContext(ThemeContext);
   if (context === undefined) {

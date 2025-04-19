@@ -1,11 +1,11 @@
 import { useEffect } from "react";
-import { ThemeConsumer } from "./ThemeContext";
-import TweetCard from "./ui/tweet-card";
+import { ThemeConsumer } from "./ui/ThemeContext";
+import TweetCard from "./ui/Tweet-card";
 import { tweetUrls } from "../constants";
-import CTA from "./CTA";
+import CTA from "./ui/CTA";
 import { motion } from "motion/react";
 
-export default function TwitterTestimonials() {
+export default function Tweets() {
   const { theme } = ThemeConsumer();
 
   useEffect(() => {
@@ -20,10 +20,10 @@ export default function TwitterTestimonials() {
   }, []);
 
   return (
-    <section className="relative  w-full  md:mt-10 flex items-center justify-center">
+    <section className="relative  w-full  mt-20 flex items-center justify-center">
       <div className="relative w-full  h-full flex flex-col items-center  justify-start  md:justify-center  md:pb-[50%] lg:pb-[30%]">
         <div className="max-w-xl mx-auto text-center">
-          <p className="md:text-lg light-text mx-4 ">
+          <p className="md:text-lg text-light mx-4 ">
             Love that we get from our community
           </p>
           <h1 className="text-4xl font-extrabold mt-5 tracking-wider ">
@@ -38,15 +38,15 @@ export default function TwitterTestimonials() {
           let extraclass = "";
 
           if (index === 0) {
-            extraclass = "lg:block top-[25%] lg:left-[3%] ";
+            extraclass = "lg:block top-[25%] lg:left-[1%] ";
           } else if (index === 1) {
-            extraclass = "md:block  top-[30%] left-[5%] lg:left-[22%] z-2";
+            extraclass = "md:block  top-[30%] left-[5%] lg:left-[21%] z-2";
           } else if (index === 2) {
             extraclass = "md:block top-[35%] left-1/2 -translate-x-1/2 z-3";
           } else if (index === 3) {
-            extraclass = "md:block top-[30%] right-[5%] lg:right-[22%] z-2";
+            extraclass = "md:block top-[30%] right-[5%] lg:right-[21%] z-2";
           } else if (index === 4) {
-            extraclass = "lg:block top-[25%] lg:right-[3%]";
+            extraclass = "lg:block top-[25%] lg:right-[1%]";
           }
 
           return (

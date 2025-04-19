@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import { ThemeConsumer } from "../ThemeContext";
+import { motion, useInView } from "motion/react";
+import { ThemeConsumer } from "./ThemeContext";
 
 function TweetCard({ url, index }) {
   const { theme } = ThemeConsumer();
@@ -35,7 +35,10 @@ function TweetCard({ url, index }) {
     }
   }, [isInView]);
 
-  const bgColor = theme === "dark-theme" ? "bg-gray-900" : "bg-white";
+  const bgColor =
+    theme === "dark-theme"
+      ? "bg-black-gradient"
+      : "bg-[#f0f0f0] shadow-lg border border-slate-200";
   const ropeColor = theme === "dark-theme" ? "bg-gray-600" : "bg-gray-400";
   const textColor = theme === "dark-theme" ? "text-gray-600" : "text-gray-400";
 

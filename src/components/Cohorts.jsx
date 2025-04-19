@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { motion } from "motion/react";
 import { cohorts } from "../constants";
 import { CalendarDays, Clock } from "lucide-react";
-import Blinker from "./Blinker";
-import { ThemeConsumer } from "./ThemeContext";
+import Blinker from "./ui/Blinker";
+import { ThemeConsumer } from "./ui/ThemeContext";
 
 const Cohorts = () => {
   const { theme } = ThemeConsumer();
@@ -87,7 +87,7 @@ const Cohorts = () => {
           <h1 className="text-6xl font-extrabold mt-5 tracking-wider text-gradient">
             Cohorts
           </h1>
-          <p className="md:text-lg light-text mx-4 mt-5 ">
+          <p className="md:text-lg text-light mx-4 mt-5 ">
             Live training classes
           </p>
         </div>
@@ -98,10 +98,20 @@ const Cohorts = () => {
             {cohorts.map((cohort, index) => (
               <motion.div
                 key={index}
-                className={`absolute w-full h-full top-0 left-0 shadow-lg select-none pointer-events-auto box-border origin-center overflow-hidden rounded-lg  ${theme === "light-theme" ? "bg-[#FFFAF0] shadow-lg border border-slate-200" : " bg-[#3D2B1F]"}`}
+                className={`absolute w-full h-full top-0 left-0 shadow-lg select-none pointer-events-auto box-border origin-center overflow-hidden rounded-lg  ${theme === "light-theme" ? "bg-[#f0f0f0] shadow-lg border border-slate-200" : " bg-black-gradient-2"}`}
                 variants={variants}
                 initial={false}
                 animate={getVariant(index)}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.2}
+                onDragEnd={(_, info) => {
+                  if (info.velocity.x > 500) {
+                    goToPrev();
+                  } else if (info.velocity.x < -500) {
+                    goToNext();
+                  }
+                }}
               >
                 <div className="flex flex-col gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg h-full overflow-y-auto">
                   <div className="w-full aspect-video rounded-lg overflow-hidden flex-shrink-0 ">
@@ -153,30 +163,30 @@ const Cohorts = () => {
                     <div>
                       <h3 className="text-3xl md:text-4xl font-bold flex justify-between items-center">
                         <div
-                          className={`truncate whitespace-nowrap overflow-hidden text-ellipsis max-w-[calc(100%-120px)]  ${theme === "light-theme" ? "text-[#3D2B1F]" : " text-[#FFDAB9]"}`}
+                          className={`truncate whitespace-nowrap overflow-hidden text-ellipsis max-w-[calc(100%-120px)]  ${theme === "light-theme" ? "text-black" : " text-white"}`}
                         >
                           {cohort.heading}
                         </div>
                         <div
-                          className={`px-1 py-1 md:px-2 sm:py-2  flex justify-center items-center text-sm gap-2 rounded-xl whitespace-nowrap ${theme === "light-theme" ? "bg-orange-950 text-white" : "bg-black/70"}`}
+                          className={`px-1 py-1 md:px-2 sm:py-2  flex justify-center items-center text-sm gap-2 rounded-xl whitespace-nowrap bg-black/70 text-white`}
                         >
                           Live <Blinker />
                         </div>
                       </h3>
                       <p
-                        className={`text-xs sm:text-sm  font-semibold mt-1 ${theme === "light-theme" ? "text-slate-600" : " text-[#FFFAF0]"}`}
+                        className={`text-xs sm:text-sm  font-semibold mt-1 text-light`}
                       >
                         {cohort.subHeading}
                       </p>
                       <div className="mt-3 sm:mt-4">
                         <p
-                          className={`text-sm font-bold flex  items-center gap-2  ${theme === "light-theme" ? "text-[#3D2B1F]" : " text-[#FFDAB9]"}`}
+                          className={`text-sm font-bold flex  items-center gap-2  ${theme === "light-theme" ? "text-black" : " text-white"}`}
                         >
                           <CalendarDays className="w-4 h-4" />
                           {cohort.starts}
                         </p>
                         <p
-                          className={`text-sm ${theme === "light-theme" ? "text-slate-600" : " text-[#FFFAF0]"} font-bold mt-2 flex items-center gap-2`}
+                          className={`text-sm text-light font-bold mt-2 flex items-center gap-2`}
                         >
                           <Clock className="w-4 h-4" />
                           {cohort.tenure}
@@ -188,24 +198,24 @@ const Cohorts = () => {
                     <div className="mt-3 sm:mt-4">
                       <div className="flex items-baseline gap-2 sm:gap-3">
                         <p
-                          className={`text-base sm:text-lg font-bold ${theme === "light-theme" ? "text-[#3D2B1F]" : " text-[#FFDAB9]"}`}
+                          className={`text-base sm:text-lg font-bold ${theme === "light-theme" ? "text-black" : " text-white"}`}
                         >
-                          {cohort.discountedPrize}
+                          {cohort.discountedPrice}
                         </p>
                         <p
-                          className={`line-through text-xs sm:text-sm ${theme === "light-theme" ? "text-slate-600" : " text-[#FFFAF0]"} font-semibold`}
+                          className={`line-through text-xs sm:text-sm text-light font-semibold`}
                         >
                           {cohort.realPrize}
                         </p>
                       </div>
                       <p
-                        className={`text-xs sm:text-sm ${theme === "light-theme" ? "text-slate-600" : " text-[#FFFAF0]"} font-bold mb-2`}
+                        className={`text-xs sm:text-sm text-light font-bold mb-2`}
                       >
-                        Save {cohort.discounte}
+                        Save {cohort.discount}
                       </p>
                       <a
                         href={cohort.link}
-                        className={`flex items-center justify-center px-4 py-2 rounded-md font-bold tracking-wide hover:scale-102 transition duration-200 ease-in-out transform filter ${theme === "light-theme" ? "bg-radial from-[#77543d] from-40% to-[#503929] text-[#FFFAF0]" : "bg-radial  from-[#FFDAB9] from-40% to-[#FFFAF0] text-[#3D2B1F]"}`}
+                        className={`flex items-center justify-center px-4 py-2 rounded-md hover:scale-102 transition duration-200 ease-in-out transform filter bg-orange-gradient font-extrabold tracking-wider ${theme === "light-theme" ? "text-white" : "text-black"} `}
                       >
                         Learn More
                       </a>
@@ -237,7 +247,7 @@ const Cohorts = () => {
             {cohorts.map((_, index) => (
               <button
                 key={index}
-                className={`w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full cursor-pointer transition-all duration-300 ease-linear border ${index === activeIndex ? "bg-amber-500 border-amber-700 scale-110" : "bg-black/40 border-transparent hover:bg-black/60"}`}
+                className={`w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full cursor-pointer transition-all duration-300 ease-linear border ${index === activeIndex ? "bg-amber-500 border-amber-700 scale-110" : "bg-gray-600 border-transparent hover:bg-black/60"}`}
                 onClick={() => setActiveIndex(index)}
                 aria-label={`Go to slide ${index + 1}`}
               />

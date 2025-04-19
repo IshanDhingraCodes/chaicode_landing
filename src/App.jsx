@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
-import {
-  Navbar,
-  Preloader,
-  Hero,
-  TwitterTestimonials,
-  LogoMarquee,
-  Cohorts,
-  Features,
-} from "./components";
+import { ThemeProvider } from "./components/ui/ThemeContext";
 import { AnimatePresence } from "motion/react";
 import Lenis from "lenis";
-import { ThemeProvider } from "./components/ThemeContext";
+import {
+  Cohorts,
+  Features,
+  Hero,
+  LogoMarquee,
+  Navbar,
+  Preloader,
+  Tweets,
+} from "./components";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -35,10 +35,10 @@ const App = () => {
       </AnimatePresence>
 
       {!isLoading && (
-        <main className="font-roboto select-none max-w-[1440px] mx-auto">
+        <main className="font-roboto select-none max-w-[1440px] mx-auto px-4">
           <Navbar />
           <Hero />
-          <TwitterTestimonials />
+          <Tweets />
           <LogoMarquee />
           <Cohorts />
           <Features />

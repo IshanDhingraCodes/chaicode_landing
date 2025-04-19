@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import { ThemeConsumer } from "./ThemeContext";
+import { ThemeConsumer } from "../components/ui/ThemeContext";
 import { chaicodeBlack, chaicodeWhite } from "../assets";
 import { NavLinks } from "../constants";
-import Blinker from "./Blinker";
-import DarkModeToggle from "./DarkMode";
+import Blinker from "../components/ui/Blinker";
+import DarkModeToggle from "../components/ui/DarkMode";
 import { AnimatePresence, motion } from "motion/react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const { theme } = ThemeConsumer();
@@ -28,13 +29,13 @@ const Navbar = () => {
       backgroundColor:
         theme === "light-theme"
           ? "rgba(255, 255, 255, 0.9)"
-          : "rgba(20, 20, 20, 0.8)",
+          : "rgba(28, 20, 30, 0.8)",
       backdropFilter: "blur(12px)",
       WebkitBackdropFilter: "blur(12px)",
       boxShadow:
         theme === "light-theme"
           ? "0 4px 20px rgba(0, 0, 0, 0.08)"
-          : "0 4px 20px rgba(255, 255, 255, 0.05)",
+          : "0 4px 20px rgba(220, 220, 220, 0.05)",
       borderRadius: "1rem",
       transition: { duration: 0.5 },
     },
@@ -51,13 +52,13 @@ const Navbar = () => {
     open: {
       height: 420,
       width: 300,
-      top: "-3px",
-      right: "-3px",
+      top: "-12px",
+      right: "-12px",
       transition: { duration: 0.3 },
     },
     close: {
-      width: 100,
-      height: 40,
+      width: 0,
+      height: 0,
       top: "0px",
       right: "0px",
       transition: { duration: 0.3, delay: 0.2 },
@@ -97,10 +98,10 @@ const Navbar = () => {
     <motion.header
       variants={wrapperVariants}
       animate={scrolled ? "scrolled" : "default"}
-      className="sticky  z-50 px-4 sm:px-6 md:px-8 "
+      className="sticky z-50 px-4 sm:px-6 md:px-8 "
     >
       <motion.nav
-        className="max-w-screen-xl mx-auto py-4 px-4 sm:px-6 md:px-8 flex justify-between"
+        className="py-4 px-4 sm:px-6 md:px-8 flex justify-between items-center"
         animate={scrolled ? "scrolled" : "default"}
         variants={navbarVariants}
         role="navigation"
@@ -122,7 +123,11 @@ const Navbar = () => {
             <li key={i}>
               <a
                 href={nav.link}
-                className="text-[16px] light-text font-medium  "
+                className={`text-[16px] font-normal transition-colors duration-200 ${
+                  theme === "light-theme"
+                    ? "text-black/60 hover:text-black"
+                    : "text-white/50 hover:text-white"
+                }`}
               >
                 {i === 0 ? (
                   <span className="flex items-center gap-2">
@@ -141,7 +146,7 @@ const Navbar = () => {
           <DarkModeToggle />
           <a
             href="https://courses.chaicode.com/learn/account/signin"
-            className="bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-6 rounded-xl transition"
+            className="bg-orange-gradient text-white font-semibold py-2 px-6 rounded-xl transition hover:brightness-90"
           >
             Login
           </a>
@@ -154,7 +159,7 @@ const Navbar = () => {
             animate={isActive ? "open" : "close"}
             initial="close"
             className={`absolute rounded-3xl overflow-hidden ${
-              theme === "light-theme" ? "bg-gray-200" : "bg-amber-600"
+              theme === "light-theme" ? "bg-gray-50" : "bg-orange-gradient"
             } shadow-xl backdrop-blur-md`}
           >
             <AnimatePresence>
@@ -204,18 +209,20 @@ const Navbar = () => {
           <button
             aria-label={isActive ? "Close menu" : "Open menu"}
             onClick={() => setIsActive((prev) => !prev)}
-            className="absolute top-0 right-0 w-[100px] h-[40px] rounded-3xl overflow-hidden"
+            className={` w-[20px] h-[20px] overflow-hidden ${
+              theme === "light-theme" ? "text-light" : "text-white"
+            } `}
           >
             <motion.div
               animate={{ top: isActive ? "-100%" : "0%" }}
               transition={{ duration: 0.4 }}
               className="relative h-full w-full"
             >
-              <div className="menu">
-                <p>menu</p>
+              <div className="h-full w-full flex items-center justify-center">
+                <Menu size={24} />
               </div>
-              <div className="menu">
-                <p>close</p>
+              <div className="h-full w-full flex items-center justify-center">
+                <X size={24} />
               </div>
             </motion.div>
           </button>
