@@ -10,6 +10,7 @@ import {
   Navbar,
   Preloader,
   Tweets,
+  Udemy,
 } from "./components";
 
 const App = () => {
@@ -42,6 +43,7 @@ const App = () => {
           <LogoMarquee />
           <Cohorts />
           <Features />
+          <Udemy />
         </main>
       )}
     </ThemeProvider>

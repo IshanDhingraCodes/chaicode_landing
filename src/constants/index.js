@@ -151,3 +151,19 @@ export const featureBlock = [
       "Our HR team also post regular job updates that you can apply directly whenever you are ready",
   },
 ];
+
+export const udemyCourses = [
+  {
+    thumbnail: "https://img.youtube.com/vi/KZ31wDjYleI/hqdefault.jpg",
+    video: "https://www.youtube-nocookie.com/embed/KZ31wDjYleI?autoplay=1",
+    heading: "Complete Web Development Course",
+    subHeading:
+      "Only web development course that you will need. Covers HTML, CSS, Tailwind, Node, React, MongoDB, Prisma, Deployment, etc.",
+    starRating: "4.7",
+    totalRatings: "10,077",
+    realPrice: "₹3099",
+    discountedPrice: "₹399",
+    discount: "87%",
+    link: "https://www.udemy.com/course/web-dev-master/?couponCode=LEARNNOWPLANS",
+  },
+];

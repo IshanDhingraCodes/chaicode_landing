@@ -99,7 +99,7 @@ const Hero = () => {
         </motion.p>
 
         <motion.h1
-          className=" text-3xl md:text-4xl lg:text-[88px] text-center font-medium mt-14 tracking-wide max-w-screen-xl md:max-w-screen-2xl z-10"
+          className="text-3xl sm:text-5xl md:text-6xl lg:text-[85px] text-center font-medium mt-14 tracking-wide max-w-screen-xl md:max-w-screen-3xl z-10"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
@@ -121,7 +121,7 @@ const Hero = () => {
           activities to keep you on track.
         </motion.p>
 
-        <CTA text="Check All Live Cohorts" className="my-20 z-10" />
+        <CTA text="Check All Live Cohorts" className="mt-20 mb-10  z-10" />
 
         {/* Perspective wrapper */}
         <div className=" w-full max-w-3xl lg:max-w-5xl perspective-[1200px] z-10 ">

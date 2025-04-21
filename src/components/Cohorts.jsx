@@ -102,16 +102,6 @@ const Cohorts = () => {
                 variants={variants}
                 initial={false}
                 animate={getVariant(index)}
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={0.2}
-                onDragEnd={(_, info) => {
-                  if (info.velocity.x > 500) {
-                    goToPrev();
-                  } else if (info.velocity.x < -500) {
-                    goToNext();
-                  }
-                }}
               >
                 <div className="flex flex-col gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg h-full overflow-y-auto">
                   <div className="w-full aspect-video rounded-lg overflow-hidden flex-shrink-0 ">
@@ -215,7 +205,7 @@ const Cohorts = () => {
                       </p>
                       <a
                         href={cohort.link}
-                        className={`flex items-center justify-center px-4 py-2 rounded-md hover:scale-102 transition duration-200 ease-in-out transform filter bg-orange-gradient font-extrabold tracking-wider ${theme === "light-theme" ? "text-white" : "text-black"} `}
+                        className={`flex items-center justify-center px-4 py-2 rounded-md hover:scale-102 transition duration-200 ease-in-out transform filter bg-orange-gradient font-extrabold tracking-wider text-white`}
                       >
                         Learn More
                       </a>

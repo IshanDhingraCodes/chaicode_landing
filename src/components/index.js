@@ -5,5 +5,15 @@ import Tweets from "./Tweets";
 import LogoMarquee from "./LogoMarquee";
 import Cohorts from "./Cohorts";
 import Features from "./Features";
+import Udemy from "./Udemy";
 
-export { Preloader, Navbar, Hero, Tweets, LogoMarquee, Cohorts, Features };
+export {
+  Preloader,
+  Navbar,
+  Hero,
+  Tweets,
+  LogoMarquee,
+  Cohorts,
+  Features,
+  Udemy,
+};

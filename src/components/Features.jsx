@@ -12,7 +12,7 @@ const Features = () => {
   return (
     <section className="my-30" aria-label="Cohort Features and Benefits">
       {/* heading */}
-      <div className="max-w-xl mx-auto text-center">
+      <div className="max-w-3xl mx-auto text-center">
         <h1 className="text-4xl sm:text-5xl font-extrabold tracking-wider">
           <span className="text-gradient">Key Benefits</span> of Cohorts
         </h1>
