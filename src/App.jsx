@@ -11,6 +11,7 @@ import {
   Preloader,
   Tweets,
   Udemy,
+  WhyChaiCode,
 } from "./components";
 
 const App = () => {
@@ -44,6 +45,7 @@ const App = () => {
           <Cohorts />
           <Features />
           <Udemy />
+          <WhyChaiCode />
         </main>
       )}
     </ThemeProvider>

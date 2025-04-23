@@ -6,6 +6,7 @@ import LogoMarquee from "./LogoMarquee";
 import Cohorts from "./Cohorts";
 import Features from "./Features";
 import Udemy from "./Udemy";
+import WhyChaiCode from "./WhyChaiCode";
 
 export {
   Preloader,
@@ -16,4 +17,5 @@ export {
   Cohorts,
   Features,
   Udemy,
+  WhyChaiCode,
 };

@@ -15,5 +15,6 @@ import leetlab from "./leetlab.png"
 import peer from "./peer.png"
 import professional from "./professional.png"
 import revision from "./revision.png"
+import hitesh from "./hitesh.png"
 
-export {chaicodeBlack, chaicodeWhite, chaigray, chaiwhite, figma, github, google, microsoft, netflix, notion, slack, bounty, hostel, leetlab, peer, professional, revision}
+export {chaicodeBlack, chaicodeWhite, chaigray, chaiwhite, figma, github, google, microsoft, netflix, notion, slack, bounty, hostel, leetlab, peer, professional, revision, hitesh}
