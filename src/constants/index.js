@@ -14,6 +14,23 @@ import {
   leetlab,
 } from "../assets";
 
+import {
+  cpp,
+  css,
+  django,
+  docker,
+  golang,
+  html,
+  java,
+  javascript,
+  kubernetes,
+  mcp,
+  nextjs,
+  node,
+  python,
+  react,
+} from "../assets/topics";
+
 export const NavLinks = [
   {
     title: "Cohorts",
@@ -165,5 +182,78 @@ export const udemyCourses = [
     discountedPrice: "₹399",
     discount: "87%",
     link: "https://www.udemy.com/course/web-dev-master/?couponCode=LEARNNOWPLANS",
+  },
+];
+
+export const topics = [
+  {
+    name: "JavaScript",
+    logo: javascript,
+    videoUrl: "https://www.youtube.com/watch?v=Hr5iLG7sUa0",
+  },
+  {
+    name: "Python",
+    logo: python,
+    videoUrl: "https://www.youtube.com/watch?v=Ca5DLSDfPec",
+  },
+  {
+    name: "NextJs",
+    logo: nextjs,
+    videoUrl: "https://www.youtube.com/watch?v=OgS1ZWZItno",
+  },
+  {
+    name: "Django",
+    logo: django,
+    videoUrl: "https://www.youtube.com/watch?v=j6szNSzw4BU",
+  },
+  {
+    name: "Docker",
+    logo: docker,
+    videoUrl: "https://www.youtube.com/watch?v=rr9cI4u1_88",
+  },
+  {
+    name: "ReactJs",
+    logo: react,
+    videoUrl: "https://www.youtube.com/watch?v=vz1RlUyrc3w",
+  },
+  {
+    name: "Kubernetes",
+    logo: kubernetes,
+    videoUrl: "https://www.youtube.com/watch?v=7XDeI5fyj3w",
+  },
+  {
+    name: "NodeJs",
+    logo: node,
+    videoUrl: "https://www.youtube.com/watch?v=ooBxSg1Cl1w",
+  },
+  {
+    name: "HTML",
+    logo: html,
+    videoUrl: "https://www.youtube.com/watch?v=XmLOwJHFHf0",
+  },
+  {
+    name: "CSS",
+    logo: css,
+    videoUrl: "https://www.youtube.com/watch?v=aLzfFJb8rWo",
+  },
+  {
+    name: "Java",
+    logo: java,
+    videoUrl: "https://www.youtube.com/watch?v=Ev7-pchAFRM",
+  },
+  {
+    name: "C++",
+    logo: cpp,
+    videoUrl: "https://www.youtube.com/watch?v=gCkPJTSZ9mU",
+  },
+  {
+    name: "GoLang",
+    logo: golang,
+    videoUrl: "https://www.youtube.com/watch?v=JoJ8Sw5Yb4c",
+  },
+  {
+    name: "MCP Server",
+    logo: mcp,
+    videoUrl: "https://www.youtube.com/watch?v=dZyQNy3-HjU",
   },
 ];

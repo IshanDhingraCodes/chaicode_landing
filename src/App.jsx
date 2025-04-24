@@ -9,6 +9,7 @@ import {
   LogoMarquee,
   Navbar,
   Preloader,
+  TopicCloud,
   Tweets,
   Udemy,
   WhyChaiCode,
@@ -46,6 +47,7 @@ const App = () => {
           <Features />
           <Udemy />
           <WhyChaiCode />
+          <TopicCloud />
         </main>
       )}
     </ThemeProvider>

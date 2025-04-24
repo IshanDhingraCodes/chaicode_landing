@@ -7,6 +7,7 @@ import Cohorts from "./Cohorts";
 import Features from "./Features";
 import Udemy from "./Udemy";
 import WhyChaiCode from "./WhyChaiCode";
+import TopicCloud from "./TopicCloud";
 
 export {
   Preloader,
@@ -18,4 +19,5 @@ export {
   Features,
   Udemy,
   WhyChaiCode,
+  TopicCloud,
 };

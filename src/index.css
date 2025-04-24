@@ -108,6 +108,7 @@ body {
   --animate-steam-rise: steam-rise 1.5s infinite ease-out;
   --animate-bubble-rise: bubble-rise 1.2s infinite ease-in;
   --animate-marquee-infinite: marquee 55s linear infinite;
+  --animate-marquee-reverse-infinite: marquee-reverse 55s linear infinite;
 
   @keyframes vibrate {
     0% {
@@ -156,6 +157,15 @@ body {
     }
     100% {
       transform: translate(-50%, 0);
+    }
+  }
+
+  @keyframes marquee-reverse {
+    0% {
+      transform: translate(-50%, 0);
+    }
+    100% {
+      transform: translate(0%, 0);
     }
   }
 }
