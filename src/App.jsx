@@ -4,6 +4,7 @@ import { AnimatePresence } from "motion/react";
 import Lenis from "lenis";
 import {
   Cohorts,
+  Discord,
   Features,
   Hero,
   LogoMarquee,
@@ -48,6 +49,7 @@ const App = () => {
           <Udemy />
           <WhyChaiCode />
           <TopicCloud />
+          <Discord />
         </main>
       )}
     </ThemeProvider>

@@ -8,6 +8,7 @@ import Features from "./Features";
 import Udemy from "./Udemy";
 import WhyChaiCode from "./WhyChaiCode";
 import TopicCloud from "./TopicCloud";
+import Discord from "./Discord";
 
 export {
   Preloader,
@@ -20,4 +21,5 @@ export {
   Udemy,
   WhyChaiCode,
   TopicCloud,
+  Discord,
 };
