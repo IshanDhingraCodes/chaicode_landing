@@ -9,6 +9,7 @@ import Udemy from "./Udemy";
 import WhyChaiCode from "./WhyChaiCode";
 import TopicCloud from "./TopicCloud";
 import Discord from "./Discord";
+import FreeApi from "./FreeApi";
 
 export {
   Preloader,
@@ -22,4 +23,5 @@ export {
   WhyChaiCode,
   TopicCloud,
   Discord,
+  FreeApi,
 };

@@ -70,7 +70,7 @@ const Features = () => {
 
         {/* leet lab */}
         <motion.div
-          className={`w-full md:col-span-2 py-8 px-6 flex flex-col justify-between rounded-3xl min-h-[400px] transform hover:scale-102 transition-transform duration-300 ${theme === "light-theme" ? "bg-[#f0f0f0] shadow-lg border border-slate-200" : "bg-black-gradient "}`}
+          className={`w-full md:col-span-2 py-8 px-6 flex flex-col justify-between rounded-3xl min-h-[480px] transform hover:scale-102 transition-transform duration-300 overflow-hidden ${theme === "light-theme" ? "bg-[#f0f0f0] shadow-lg border border-slate-200" : "bg-black-gradient "}`}
           aria-label={featureBlock[4].title}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -82,14 +82,14 @@ const Features = () => {
               {featureBlock[4].title}
             </p>
             <p className="text-light">{featureBlock[4].description}</p>
-            <div className="mt-2">
+            <div className="mt-2 ">
               <LeetLabIcon aria-label="LeetLab Icon" />
             </div>
           </div>
           <img
             src={featureBlock[4].images}
             alt={featureBlock[4].title}
-            className="w-full max-h-40 object-contain mt-4 transform hover:scale-105 transition-transform duration-300"
+            className="w-full max-h-40 object-contain transform hover:scale-105 transition-transform duration-300"
           />
         </motion.div>
 
@@ -138,7 +138,7 @@ const Features = () => {
 
         {/* hostel */}
         <motion.div
-          className={`md:col-span-2 p-6 flex flex-col items-center justify-around rounded-3xl min-h-[400px] transform hover:scale-102 transition-transform duration-300 ${theme === "light-theme" ? "bg-[#f0f0f0] shadow-lg border border-slate-200" : "bg-black-gradient "}`}
+          className={`md:col-span-2 p-6 flex flex-col items-center justify-around rounded-3xl min-h-[500px] transform hover:scale-102 transition-transform duration-300 ${theme === "light-theme" ? "bg-[#f0f0f0] shadow-lg border border-slate-200" : "bg-black-gradient "}`}
           aria-label={featureBlock[2].title}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

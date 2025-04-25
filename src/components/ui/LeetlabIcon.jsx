@@ -34,7 +34,7 @@ export default function LeetLabIcon() {
       </div>
 
       {/* Typing code line */}
-      <div className="flex items-center">
+      <div className="flex items-center ">
         <span>{displayedText}</span>
         <span className="w-1 h-4 bg-blue-500 ml-1 animate-pulse" />
       </div>

@@ -6,6 +6,7 @@ import {
   Cohorts,
   Discord,
   Features,
+  FreeApi,
   Hero,
   LogoMarquee,
   Navbar,
@@ -50,6 +51,7 @@ const App = () => {
           <WhyChaiCode />
           <TopicCloud />
           <Discord />
+          <FreeApi />
         </main>
       )}
     </ThemeProvider>

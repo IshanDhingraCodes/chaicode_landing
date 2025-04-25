@@ -25,7 +25,7 @@ const Discord = () => {
   };
 
   return (
-    <section className="flex lg:flex-row flex-col px-4 sm:px-6 md:px-10 my-20 gap-10">
+    <section className="flex lg:flex-row flex-col px-4  md:px-10 my-20 gap-10">
       <motion.div
         className="flex-1 flex justify-center items-center lg:items-start flex-col gap-8  "
         initial="hidden"
@@ -54,20 +54,20 @@ const Discord = () => {
         </a>
       </motion.div>
       <motion.div
-        className="flex-1 flex justify-center items-center md:ml-10 ml-0 md:mt-0 mt-4 relative "
+        className="flex-1 flex justify-center items-center lg:ml-10 ml-0 md:mt-0 mt-4 relative "
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={slideInFromRight}
       >
         <div
-          className={`p-2 ${theme === "light-theme" ? "bg-[#f0f0f0] shadow-lg border border-slate-200 text-gray-700" : "bg-black-gradient"}`}
+          className={`p-2 rounded-3xl ${theme === "light-theme" ? "bg-[#f0f0f0] shadow-lg border border-slate-200 text-gray-700" : "bg-black-gradient"}`}
         >
           <img
             src={discord}
             alt="discord"
             loading="lazy"
-            className="w-full max-w-[550px] lg:max-w-full"
+            className="w-full max-w-[550px] lg:max-w-full rounded-3xl"
           />
         </div>
       </motion.div>
