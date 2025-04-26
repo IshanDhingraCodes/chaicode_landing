@@ -25,7 +25,7 @@ const Discord = () => {
   };
 
   return (
-    <section className="flex lg:flex-row flex-col px-4  md:px-10 my-20 gap-10">
+    <section className="flex lg:flex-row flex-col px-4  md:px-10 my-20 gap-10 overflow-hidden">
       <motion.div
         className="flex-1 flex justify-center items-center lg:items-start flex-col gap-8  "
         initial="hidden"

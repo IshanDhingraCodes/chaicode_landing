@@ -102,6 +102,7 @@ const Cohorts = () => {
                 variants={variants}
                 initial={false}
                 animate={getVariant(index)}
+                style={{ willChange: "transform, opacity" }}
               >
                 <div className="flex flex-col gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg h-full overflow-y-auto">
                   <div className="w-full aspect-video rounded-lg overflow-hidden flex-shrink-0 ">
