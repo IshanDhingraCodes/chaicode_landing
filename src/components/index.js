@@ -10,6 +10,7 @@ import WhyChaiCode from "./WhyChaiCode";
 import TopicCloud from "./TopicCloud";
 import Discord from "./Discord";
 import FreeApi from "./FreeApi";
+import AppDownload from "./AppDownload";
 
 export {
   Preloader,
@@ -24,4 +25,5 @@ export {
   TopicCloud,
   Discord,
   FreeApi,
+  AppDownload
 };

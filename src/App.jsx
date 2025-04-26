@@ -3,6 +3,7 @@ import { ThemeProvider } from "./components/ui/ThemeContext";
 import { AnimatePresence } from "motion/react";
 import Lenis from "lenis";
 import {
+  AppDownload,
   Cohorts,
   Discord,
   Features,
@@ -52,6 +53,7 @@ const App = () => {
           <TopicCloud />
           <Discord />
           <FreeApi />
+          <AppDownload />
         </main>
       )}
     </ThemeProvider>
