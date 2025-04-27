@@ -16,6 +16,7 @@ import {
   Tweets,
   Udemy,
   WhyChaiCode,
+  YoutubeLink,
 } from "./components";
 
 const App = () => {
@@ -54,6 +55,7 @@ const App = () => {
           <Discord />
           <FreeApi />
           <AppDownload />
+          <YoutubeLink />
         </main>
       )}
     </ThemeProvider>

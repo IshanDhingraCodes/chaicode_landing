@@ -11,6 +11,7 @@ import TopicCloud from "./TopicCloud";
 import Discord from "./Discord";
 import FreeApi from "./FreeApi";
 import AppDownload from "./AppDownload";
+import YoutubeLink from "./YoutubeLink";
 
 export {
   Preloader,
@@ -25,5 +26,6 @@ export {
   TopicCloud,
   Discord,
   FreeApi,
-  AppDownload
+  AppDownload,
+  YoutubeLink,
 };

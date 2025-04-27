@@ -257,3 +257,22 @@ export const topics = [
     videoUrl: "https://www.youtube.com/watch?v=dZyQNy3-HjU",
   },
 ];
+
+export const youtubeCard = [
+  {
+    channel: "Chai Aur Code",
+    tag: "@chaiaurcode",
+    subscribers: "600K",
+    totalVideos: "545",
+    language: "हिंदी",
+    link: "https://www.youtube.com/@chaiaurcode",
+  },
+  {
+    channel: "Hitesh Choudhary",
+    tag: "@HiteshCodeLab",
+    subscribers: "989K",
+    totalVideos: "1.6K",
+    language: "English",
+    link: "https://www.youtube.com/@Hiteshcodelab",
+  },
+];
