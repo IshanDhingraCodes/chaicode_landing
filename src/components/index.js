@@ -12,6 +12,7 @@ import Discord from "./Discord";
 import FreeApi from "./FreeApi";
 import AppDownload from "./AppDownload";
 import YoutubeLink from "./YoutubeLink";
+import Footer from "./Footer";
 
 export {
   Preloader,
@@ -28,4 +29,5 @@ export {
   FreeApi,
   AppDownload,
   YoutubeLink,
+  Footer,
 };

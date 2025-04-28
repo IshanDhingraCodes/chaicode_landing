@@ -7,6 +7,7 @@ import {
   Cohorts,
   Discord,
   Features,
+  Footer,
   FreeApi,
   Hero,
   LogoMarquee,
@@ -42,21 +43,24 @@ const App = () => {
       </AnimatePresence>
 
       {!isLoading && (
-        <main className="font-roboto select-none max-w-[1440px] mx-auto px-4">
-          <Navbar />
-          <Hero />
-          <Tweets />
-          <LogoMarquee />
-          <Cohorts />
-          <Features />
-          <Udemy />
-          <WhyChaiCode />
-          <TopicCloud />
-          <Discord />
-          <FreeApi />
-          <AppDownload />
-          <YoutubeLink />
-        </main>
+        <div className="font-roboto select-none">
+          <main className=" max-w-[1440px] mx-auto px-4">
+            <Navbar />
+            <Hero />
+            <Tweets />
+            <LogoMarquee />
+            <Cohorts />
+            <Features />
+            <Udemy />
+            <WhyChaiCode />
+            <TopicCloud />
+            <Discord />
+            <FreeApi />
+            <AppDownload />
+            <YoutubeLink />
+          </main>
+          <Footer />
+        </div>
       )}
     </ThemeProvider>
   );

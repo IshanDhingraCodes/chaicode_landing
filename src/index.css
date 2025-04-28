@@ -50,6 +50,7 @@
 
 @theme {
   --font-roboto: Roboto, "sans-serif";
+  --breakpoint-xs: 379px;
 }
 
 .dark-theme {

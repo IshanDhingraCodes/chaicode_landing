@@ -276,3 +276,56 @@ export const youtubeCard = [
     link: "https://www.youtube.com/@Hiteshcodelab",
   },
 ];
+
+export const footerLinks = [
+  {
+    title: "Products",
+    links: [
+      {
+        name: "Courses",
+        link: "https://courses.chaicode.com/learn",
+      },
+      {
+        name: "Cohort",
+        link: "https://courses.chaicode.com/learn/view-all?show=batch&type=17",
+      },
+      {
+        name: "Coding Hero",
+        link: "https://courses.chaicode.com/learn/batch/about?bundleId=226894",
+      },
+      {
+        name: "FreeAPI",
+        link: "https://freeapi.app",
+      },
+      {
+        name: "Masterji",
+        link: "https://masterji.co",
+      },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      {
+        name: "Docs",
+        link: "https://docs.chaicode.com/",
+      },
+      {
+        name: "Privacy Policy",
+        link: "/",
+      },
+      {
+        name: "Terms of Service",
+        link: "/",
+      },
+      {
+        name: "Pricing Policy",
+        link: "/",
+      },
+      {
+        name: "Refund Policy",
+        link: "/",
+      },
+    ],
+  },
+];
