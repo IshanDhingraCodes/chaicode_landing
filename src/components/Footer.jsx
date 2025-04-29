@@ -83,10 +83,7 @@ const Footer = () => {
                 Copyright Ⓒ 2025 ChaiCode. All Rights Reserved.
               </p>
 
-              <div
-                className="flex flex-row md:mt-0 mt-6 items-center justify-between w-full xs:w-fit"
-                aria-label="Social Media Links"
-              >
+              <div className="flex flex-row md:mt-0 mt-6 items-center justify-between w-full xs:w-fit">
                 <SocialIcon
                   href="https://www.youtube.com/@chaiaurcode"
                   ariaLabel="YouTube"

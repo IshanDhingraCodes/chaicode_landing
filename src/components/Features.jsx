@@ -27,10 +27,7 @@ const Features = () => {
         >
           <span className="text-gradient">Key Benefits</span> of Cohorts
         </h1>
-        <p
-          className="md:text-lg text-light mx-4 mt-5"
-          aria-describedby="features-heading"
-        >
+        <p className="md:text-lg text-light mx-4 mt-5">
           Cohorts are the best way to learn because you finish the course in a
           timely manner
         </p>
@@ -39,7 +36,6 @@ const Features = () => {
       {/* grid */}
       <div
         className="grid grid-cols-1 md:grid-cols-6 gap-4 gap-y-6 max-w-7xl mx-auto mt-20 px-4 sm:px-6 md:px-10"
-        role="list"
         aria-label="Feature Grid"
       >
         {/* professional */}
@@ -50,7 +46,6 @@ const Features = () => {
               : "bg-black-gradient"
           }`}
           aria-label={featureBlock[0].title}
-          role="listitem"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -68,12 +63,7 @@ const Features = () => {
             >
               {featureBlock[0].title}
             </p>
-            <p
-              className="text-light mt-2"
-              aria-describedby={`professional-heading-${0}`}
-            >
-              {featureBlock[0].description}
-            </p>
+            <p className="text-light mt-2">{featureBlock[0].description}</p>
           </div>
         </motion.div>
 
@@ -85,7 +75,6 @@ const Features = () => {
               : "bg-black-gradient"
           }`}
           aria-label={featureBlock[1].title}
-          role="listitem"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -103,12 +92,7 @@ const Features = () => {
             >
               {featureBlock[1].title}
             </p>
-            <p
-              className="text-light"
-              aria-describedby={`bounties-heading-${1}`}
-            >
-              {featureBlock[1].description}
-            </p>
+            <p className="text-light">{featureBlock[1].description}</p>
           </div>
         </motion.div>
 
@@ -120,7 +104,6 @@ const Features = () => {
               : "bg-black-gradient"
           }`}
           aria-label={featureBlock[4].title}
-          role="listitem"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -133,9 +116,7 @@ const Features = () => {
             >
               {featureBlock[4].title}
             </p>
-            <p className="text-light" aria-describedby={`leetlab-heading-${4}`}>
-              {featureBlock[4].description}
-            </p>
+            <p className="text-light">{featureBlock[4].description}</p>
             <div className="mt-2">
               <LeetLabIcon aria-label="LeetLab Icon" />
             </div>
@@ -150,7 +131,6 @@ const Features = () => {
         {/* peer & revision */}
         <div
           className="w-full md:col-span-2 grid grid-rows-2 gap-4"
-          role="group"
           aria-label="Peer and Revision Features"
         >
           {/* peer */}
@@ -161,7 +141,6 @@ const Features = () => {
                 : "bg-black-gradient"
             }`}
             aria-label={featureBlock[3].title}
-            role="listitem"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -174,10 +153,7 @@ const Features = () => {
               {featureBlock[3].title}
             </p>
             <PeerCodeReviewIcon aria-label="Peer Code Review Icon" />
-            <p
-              className="text-light mt-2 text-center"
-              aria-describedby={`peer-heading-${3}`}
-            >
+            <p className="text-light mt-2 text-center">
               {featureBlock[3].description}
             </p>
           </motion.div>
@@ -190,7 +166,6 @@ const Features = () => {
                 : "bg-black-gradient"
             }`}
             aria-label={featureBlock[5].title}
-            role="listitem"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -207,10 +182,7 @@ const Features = () => {
             >
               {featureBlock[5].title}
             </p>
-            <p
-              className="text-light mt-2 text-center"
-              aria-describedby={`revision-heading-${5}`}
-            >
+            <p className="text-light mt-2 text-center">
               {featureBlock[5].description}
             </p>
           </motion.div>
@@ -224,7 +196,6 @@ const Features = () => {
               : "bg-black-gradient"
           }`}
           aria-label={featureBlock[2].title}
-          role="listitem"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -242,12 +213,7 @@ const Features = () => {
             >
               {featureBlock[2].title}
             </p>
-            <p
-              className="text-light mt-2"
-              aria-describedby={`hostel-heading-${2}`}
-            >
-              {featureBlock[2].description}
-            </p>
+            <p className="text-light mt-2">{featureBlock[2].description}</p>
           </div>
         </motion.div>
 
@@ -259,7 +225,6 @@ const Features = () => {
               : "bg-black-gradient"
           }`}
           aria-label={featureBlock[6].title}
-          role="listitem"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -273,12 +238,8 @@ const Features = () => {
             >
               {featureBlock[6].title}
             </p>
-            <p className="text-light" aria-describedby={`alumni-heading-${6}`}>
-              {featureBlock[6].description}
-            </p>
-            <p className="text-light" aria-describedby={`alumni-heading-${6}`}>
-              {featureBlock[6].subDescription}
-            </p>
+            <p className="text-light">{featureBlock[6].description}</p>
+            <p className="text-light">{featureBlock[6].subDescription}</p>
           </div>
         </motion.div>
       </div>
