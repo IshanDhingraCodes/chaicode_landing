@@ -24,7 +24,7 @@ const TopicCloud = () => {
         </p>
       </div>
 
-      <div className="overflow-hidden w-[80%] mx-auto py-8 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+      <div className="overflow-hidden w-[95%] xs:w-[80%] mx-auto py-8 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
         {/* 1st row */}
         <div className="flex min-w-max animate-marquee-infinite my-5">
           {[...topics, ...topics].map((topic, i) => (

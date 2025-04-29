@@ -35,7 +35,7 @@ const FreeApi = () => {
         </h1>
       </div>
 
-      <div className="flex lg:flex-row flex-col p-4 md:p-10 mt-10 gap-10 justify-center items-center">
+      <div className="flex lg:flex-row flex-col p-4 md:p-10 mt-3 xs:mt-10 gap-10 justify-center items-center">
         {/* Video Section */}
         <motion.div
           className={`p-2 h-full w-full max-w-[550px] lg:w-[50%] rounded-3xl ${
@@ -51,7 +51,7 @@ const FreeApi = () => {
           <div className="flex-1 aspect-video w-full rounded-xl overflow-hidden">
             {!showVideo ? (
               <button
-                className="w-full h-full relative group"
+                className="w-full h-full relative group cursor-pointer"
                 onClick={() => setShowVideo(true)}
                 aria-label="Play YouTube video about FreeAPI"
               >

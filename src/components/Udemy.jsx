@@ -184,7 +184,7 @@ const Udemy = () => {
       <div className="flex justify-center gap-4 mt-6">
         <button
           onClick={scrollLeft}
-          className="p-2 rounded-full bg-orange-gradient text-white hover:scale-105 transition-transform"
+          className="p-2 rounded-full bg-orange-gradient text-white hover:scale-105 transition-transform cursor-pointer"
           aria-label="Scroll to previous course"
         >
           <svg
@@ -204,7 +204,7 @@ const Udemy = () => {
         </button>
         <button
           onClick={scrollRight}
-          className="p-2 rounded-full bg-orange-gradient text-white hover:scale-105 transition-transform"
+          className="p-2 rounded-full bg-orange-gradient text-white hover:scale-105 transition-transform cursor-pointer"
           aria-label="Scroll to next course"
         >
           <svg

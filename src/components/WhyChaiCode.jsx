@@ -26,7 +26,7 @@ const WhyChaiCode = () => {
         >
           But Why{" "}
           <span
-            className="text-gradient text-4xl lg:text-6xl"
+            className="text-gradient text-3xl lg:text-6xl"
             aria-label="ChaiCode Highlight"
           >
             ChaiCode
