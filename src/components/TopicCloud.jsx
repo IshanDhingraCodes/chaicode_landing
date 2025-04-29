@@ -26,13 +26,14 @@ const TopicCloud = () => {
 
       <div className="overflow-hidden w-[80%] mx-auto py-8 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
         {/* 1st row */}
-        <div className="flex min-w-max gap-5 sm:gap-14 animate-marquee-infinite my-5">
+        <div className="flex min-w-max animate-marquee-infinite my-5">
           {[...topics, ...topics].map((topic, i) => (
             <div key={i}>
               <motion.a
                 href={topic.videoUrl}
                 target="_blank"
-                className={`relative inline-flex items-center rounded-full font-semibold px-4 py-2 shadow-md hover:shadow-lg transition-shadow duration-300 ${theme === "light-theme" ? "bg-[#f0f0f0] shadow-lg border border-slate-200" : "bg-black-gradient "}`}
+                aria-label={`Watch video on ${topic.name}`}
+                className={`relative inline-flex items-center mr-10 rounded-full font-semibold px-4 py-2 shadow-md hover:shadow-lg transition-shadow duration-300 ${theme === "light-theme" ? "bg-[#f0f0f0] shadow-lg border border-slate-200" : "bg-black-gradient "}`}
                 variants={pillVariants}
                 initial="initial"
                 animate="animate"
@@ -54,13 +55,14 @@ const TopicCloud = () => {
         </div>
 
         {/* 2nd row */}
-        <div className="flex min-w-max gap-5 sm:gap-14 animate-marquee-reverse-infinite">
+        <div className="flex min-w-max animate-marquee-reverse-infinite">
           {[...topics, ...topics].map((topic, i) => (
             <div key={i}>
               <motion.a
                 href={topic.videoUrl}
                 target="_blank"
-                className={`relative inline-flex items-center rounded-full font-semibold px-4 py-2 shadow-md hover:shadow-lg transition-shadow duration-300 ${theme === "light-theme" ? "bg-[#f0f0f0] shadow-lg border border-slate-200" : "bg-black-gradient "}`}
+                aria-label={`Watch video on ${topic.name}`}
+                className={`relative inline-flex items-center mr-10 rounded-full font-semibold px-4 py-2 shadow-md hover:shadow-lg transition-shadow duration-300 ${theme === "light-theme" ? "bg-[#f0f0f0] shadow-lg border border-slate-200" : "bg-black-gradient "}`}
                 variants={pillVariants}
                 initial="initial"
                 animate="animate"
@@ -82,13 +84,14 @@ const TopicCloud = () => {
         </div>
 
         {/* 3rd row */}
-        <div className="flex min-w-max gap-5 sm:gap-14 animate-marquee-infinite my-5">
+        <div className="flex min-w-max animate-marquee-infinite my-5">
           {[...topics.reverse(), ...topics].map((topic, i) => (
             <div key={i}>
               <motion.a
                 href={topic.videoUrl}
                 target="_blank"
-                className={`relative inline-flex items-center rounded-full font-semibold px-4 py-2 shadow-md hover:shadow-lg transition-shadow duration-300 ${theme === "light-theme" ? "bg-[#f0f0f0] shadow-lg border border-slate-200" : "bg-black-gradient "}`}
+                aria-label={`Watch video on ${topic.name}`}
+                className={`relative inline-flex items-center mr-10 rounded-full font-semibold px-4 py-2 shadow-md hover:shadow-lg transition-shadow duration-300 ${theme === "light-theme" ? "bg-[#f0f0f0] shadow-lg border border-slate-200" : "bg-black-gradient "}`}
                 variants={pillVariants}
                 initial="initial"
                 animate="animate"

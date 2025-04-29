@@ -15,11 +15,8 @@ const useDimension = () => {
 
   useEffect(() => {
     updateDimension();
-
     window.addEventListener("resize", updateDimension);
-    return () => {
-      window.removeEventListener("resize", updateDimension);
-    };
+    return () => window.removeEventListener("resize", updateDimension);
   }, []);
 
   return dimension;
@@ -40,22 +37,43 @@ const Feedback = () => {
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3]);
 
   return (
-    <div className="w-full h-full flex flex-col items-center ">
+    <div
+      className="w-full h-full flex flex-col items-center"
+      role="main"
+      aria-label="Student Testimonials Section"
+    >
       <div className="max-w-3xl mx-auto text-center mb-5 sm:mb-20">
         <p
-          className={`inline-flex py-2 px-4 rounded-full tracking-wider font-semibold my-10 ${theme === "light-theme" ? "bg-[#f0f0f0] shadow-lg border border-slate-200 text-gray-700" : "bg-black-gradient"}`}
+          className={`inline-flex py-2 px-4 rounded-full tracking-wider font-semibold my-10 ${
+            theme === "light-theme"
+              ? "bg-[#f0f0f0] shadow-lg border border-slate-200 text-gray-700"
+              : "bg-black-gradient"
+          }`}
+          aria-label="Testimonials badge"
         >
           &#123; Testimonials &#125;
         </p>
-        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-wider">
+        <h1
+          className="text-4xl sm:text-5xl font-extrabold tracking-wider"
+          id="feedback-heading"
+        >
           Our Students <span className="text-gradient">Feedback</span>
         </h1>
-        <p className="md:text-lg text-light mx-4 mt-5">
+        <p
+          className="md:text-lg text-light mx-4 mt-5"
+          aria-describedby="feedback-heading"
+        >
           Explore the incredible advantages of enrolling in our courses and
           enhancing your skills
         </p>
       </div>
-      <div className="h-[700px] w-full flex flex-col sm:hidden items-center mt-8 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
+
+      {/* Mobile testimonial loop */}
+      <div
+        className="h-[700px] w-full flex flex-col sm:hidden items-center mt-8 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]"
+        role="region"
+        aria-labelledby="feedback-heading"
+      >
         <motion.div
           className="flex flex-col items-center justify-center"
           animate={{ y: ["0%", "-50%"] }}
@@ -64,11 +82,13 @@ const Feedback = () => {
             repeat: Infinity,
             ease: "linear",
           }}
+          role="list"
         >
           {[...feedbacks, ...feedbacks].map((feedback, i) => (
             <div
               key={i}
               className="w-full relative object-cover min-w-[250px] overflow-hidden"
+              role="listitem"
             >
               <FeedbackCard
                 content={feedback.content}
@@ -79,9 +99,13 @@ const Feedback = () => {
           ))}
         </motion.div>
       </div>
+
+      {/* Desktop columns with scroll-based animation */}
       <div
         ref={container}
         className="h-[175vh] box-border items-center justify-center gap-5 overflow-hidden hidden sm:flex [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]"
+        role="region"
+        aria-labelledby="feedback-heading"
       >
         <Column
           feedbacks={[feedbacks[0], feedbacks[1], feedbacks[2]]}
@@ -104,6 +128,7 @@ const Feedback = () => {
           className="top-[-75%] hidden lg:block"
         />
       </div>
+
       <div className="mt-10 md:mt-20">
         <CTA text="Join Cohorts Live Classes" />
       </div>
@@ -116,11 +141,13 @@ const Column = ({ feedbacks, y = 0, className }) => {
     <motion.div
       style={{ y, willChange: "transform" }}
       className={`w-full h-full flex flex-col items-center justify-center relative ${className}`}
+      role="list"
     >
       {feedbacks.map((feedback, i) => (
         <div
           key={i}
           className="w-full relative object-cover min-w-[250px] overflow-hidden"
+          role="listitem"
         >
           <FeedbackCard
             content={feedback.content}

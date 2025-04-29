@@ -2,34 +2,98 @@ import React from "react";
 import { ThemeConsumer } from "./ui/ThemeContext";
 import { Zap, Bell, Smartphone } from "lucide-react";
 import { phone } from "../assets";
+import { motion } from "motion/react";
+
+const textVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay: i * 0.2, ease: "easeOut" },
+  }),
+};
+
+const imageVariants = {
+  hidden: { opacity: 0, x: 50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+const buttonVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: (i) => ({
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5, delay: i * 0.3, ease: "easeOut" },
+  }),
+};
 
 const AppDownload = () => {
   const { theme } = ThemeConsumer();
 
   return (
-    <section className="flex md:flex-row flex-col px-4  md:px-10 my-20 gap-10">
-      <div className="flex-1 flex justify-center items-start flex-col gap-8  ">
-        <h2 className="text-4xl lg:text-5xl md:leading-15  lg:leading-[55px] font-semibold text-center lg:text-start text-gradient">
+    <section className="flex md:flex-row flex-col px-4 md:px-10 my-20 gap-10">
+      <div className="flex-1 flex justify-center items-start flex-col gap-8">
+        <motion.h2
+          className="text-4xl lg:text-5xl md:leading-15 lg:leading-[55px] font-semibold text-center lg:text-start text-gradient"
+          variants={textVariants}
+          initial="hidden"
+          whileInView="visible"
+          custom={0}
+          viewport={{ once: true }}
+          aria-label="Learn on the go"
+        >
           Learn on the go
-        </h2>
-        <p className="text-light text-justify">
+        </motion.h2>
+        <motion.p
+          className="text-light text-justify"
+          variants={textVariants}
+          initial="hidden"
+          whileInView="visible"
+          custom={1}
+          viewport={{ once: true }}
+          aria-label="Take your coding journey anywhere with the ChaiCode mobile app."
+        >
           Take your coding journey anywhere with the ChaiCode mobile app. Access
           courses, join live sessions, and connect with the community - all from
           your pocket.
-        </p>
-        <ul className="text-[18px] font-semibold flex flex-col gap-5">
+        </motion.p>
+        <motion.ul
+          className="text-[18px] font-semibold flex flex-col gap-5"
+          variants={textVariants}
+          initial="hidden"
+          whileInView="visible"
+          custom={2}
+          viewport={{ once: true }}
+          role="list"
+          aria-label="App features"
+        >
           <li className="flex items-center gap-5">
             <div
-              className={`p-2 rounded-full ${theme === "light-theme" ? "bg-orange-gradient shadow-lg border border-slate-200 text-white" : "bg-black-gradient"}`}
+              className={`p-2 rounded-full ${
+                theme === "light-theme"
+                  ? "bg-orange-gradient shadow-lg border border-slate-200 text-white"
+                  : "bg-black-gradient"
+              }`}
+              role="img"
+              aria-label="Offline course access"
             >
               <Zap />
             </div>
             Offline course access
           </li>
-
           <li className="flex items-center gap-5">
             <div
-              className={`p-2 rounded-full ${theme === "light-theme" ? "bg-orange-gradient shadow-lg border border-slate-200 text-white" : "bg-black-gradient"}`}
+              className={`p-2 rounded-full ${
+                theme === "light-theme"
+                  ? "bg-orange-gradient shadow-lg border border-slate-200 text-white"
+                  : "bg-black-gradient"
+              }`}
+              role="img"
+              aria-label="Live session notifications"
             >
               <Bell />
             </div>
@@ -37,23 +101,35 @@ const AppDownload = () => {
           </li>
           <li className="flex items-center gap-5">
             <div
-              className={`p-2 rounded-full ${theme === "light-theme" ? "bg-orange-gradient shadow-lg border border-slate-200 text-white" : "bg-black-gradient"}`}
+              className={`p-2 rounded-full ${
+                theme === "light-theme"
+                  ? "bg-orange-gradient shadow-lg border border-slate-200 text-white"
+                  : "bg-black-gradient"
+              }`}
+              role="img"
+              aria-label="Revision while commuting"
             >
               <Smartphone />
             </div>
             Revision while commuting
           </li>
-        </ul>
-        <div className="flex items-center md:justify-start justify-center w-full gap-3 ">
-          {/* apple download link */}
-          <a
+        </motion.ul>
+        <div className="flex items-center md:justify-start justify-center w-full gap-3">
+          <motion.a
             href="https://apps.apple.com/in/app/chaicode/id6504993143"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Join our Discord with 80,000 active coders"
+            aria-label="Download on the App Store"
+            variants={buttonVariants}
+            initial="hidden"
+            whileInView="visible"
+            custom={0}
+            viewport={{ once: true }}
           >
             <div
-              className={`flex p-2 gap-3 items-center  bg-orange-gradient rounded-2xl hover:scale-105 transition duration-200 ease-in-out w-[150px] sm:w-[175px]`}
+              className={`flex p-2 gap-3 items-center bg-orange-gradient rounded-2xl hover:scale-105 transition duration-200 ease-in-out w-[150px] sm:w-[175px]`}
+              role="button"
+              aria-label="Download on the App Store"
             >
               <div>
                 <svg
@@ -75,17 +151,22 @@ const AppDownload = () => {
                 </p>
               </div>
             </div>
-          </a>
-
-          {/* play store download link */}
-          <a
+          </motion.a>
+          <motion.a
             href="https://play.google.com/store/apps/details?id=com.chaicode.courses&pcampaignid=web_share"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Join our Discord with 80,000 active coders"
+            aria-label="Download on Google Play"
+            variants={buttonVariants}
+            initial="hidden"
+            whileInView="visible"
+            custom={1}
+            viewport={{ once: true }}
           >
             <div
-              className={`flex p-2 gap-3 items-center  bg-orange-gradient rounded-2xl hover:scale-105 transition duration-200 ease-in-out w-[150px] sm:w-[175px]`}
+              className={`flex p-2 gap-3 items-center bg-orange-gradient rounded-2xl hover:scale-105 transition duration-200 ease-in-out w-[150px] sm:w-[175px]`}
+              role="button"
+              aria-label="Download on Google Play"
             >
               <div>
                 <svg
@@ -107,18 +188,24 @@ const AppDownload = () => {
                 </p>
               </div>
             </div>
-          </a>
+          </motion.a>
         </div>
       </div>
-
-      <div className="flex-1 flex justify-center items-center lg:ml-10 ml-0 md:mt-0 mt-4 relative ">
+      <motion.div
+        className="flex-1 flex justify-center items-center lg:ml-10 ml-0 md:mt-0 mt-4 relative"
+        variants={imageVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        aria-hidden="true"
+      >
         <img
           src={phone}
-          alt="phone"
+          alt="Phone displaying ChaiCode mobile app"
           loading="lazy"
           className="h-full max-h-[550px] max-w-full rounded-3xl"
         />
-      </div>
+      </motion.div>
     </section>
   );
 };

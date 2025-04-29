@@ -20,85 +20,78 @@ export default function Tweets() {
   }, []);
 
   return (
-    <section className="relative  w-full  mt-20 flex items-center justify-center">
-      <div className="relative w-full  h-full flex flex-col items-center  justify-start  md:justify-center  md:pb-[50%] lg:pb-[30%]">
+    <section
+      className="relative w-full mt-20 flex items-center justify-center"
+      aria-label="Community Tweet Highlights"
+    >
+      <div className="relative w-full h-full flex flex-col items-center justify-start md:justify-center md:pb-[50%] lg:pb-[30%]">
         <div className="max-w-xl mx-auto text-center">
-          <p className="md:text-lg text-light mx-4 ">
+          <p className="md:text-lg text-light mx-4">
             Love that we get from our community
           </p>
-          <h1 className="text-4xl font-extrabold mt-5 tracking-wider ">
+          <h1 className="text-4xl font-extrabold mt-5 tracking-wider">
             <span className="text-gradient">Tweet</span> Love
           </h1>
-          <CTA text="Join Cohorts Live Classes" className="mt-10" />
+          <CTA
+            text="Join Cohorts Live Classes"
+            className="mt-10"
+            aria-label="Join our live Cohorts classes"
+          />
         </div>
 
         {/* Desktop version */}
-
         {tweetUrls.slice(0, 5).map((url, index) => {
           let extraclass = "";
 
-          if (index === 0) {
-            extraclass = "lg:block top-[25%] lg:left-[1%] ";
-          } else if (index === 1) {
-            extraclass = "md:block  top-[30%] left-[5%] lg:left-[21%] z-2";
-          } else if (index === 2) {
+          if (index === 0) extraclass = "lg:block top-[25%] lg:left-[1%]";
+          else if (index === 1)
+            extraclass = "md:block top-[30%] left-[5%] lg:left-[21%] z-2";
+          else if (index === 2)
             extraclass = "md:block top-[35%] left-1/2 -translate-x-1/2 z-3";
-          } else if (index === 3) {
+          else if (index === 3)
             extraclass = "md:block top-[30%] right-[5%] lg:right-[21%] z-2";
-          } else if (index === 4) {
-            extraclass = "lg:block top-[25%] lg:right-[1%]";
-          }
+          else if (index === 4) extraclass = "lg:block top-[25%] lg:right-[1%]";
 
           return (
-            <div key={url} className={`absolute hidden my-10 ${extraclass}`}>
+            <div
+              key={url}
+              className={`absolute hidden my-10 ${extraclass}`}
+              aria-label={`Embedded Tweet ${index + 1}`}
+            >
               <TweetCard url={url} index={index} theme={theme} />
             </div>
           );
         })}
 
-        {/* mobile version */}
-
-        <div className="h-[600px]  my-14 md:hidden overflow-hidden grid sm:grid-cols-2 gap-4 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
+        {/* Mobile version */}
+        <div
+          className="h-[600px] my-14 md:hidden overflow-hidden grid sm:grid-cols-2 gap-4 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]"
+          aria-label="Scrolling tweets from our community"
+        >
           <motion.div
-            initial={{
-              y: 0,
-            }}
-            animate={{
-              y: "-50%",
-            }}
-            transition={{
-              duration: 60,
-              repeat: Infinity,
-              repeatType: "loop",
-              ease: "linear",
-            }}
-            className={`flex flex-col gap-4 pb-4`}
+            animate={{ y: ["0%", "-50%"] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="flex flex-col gap-4 pb-4"
+            aria-label="Tweet column scrolling up"
           >
             {[...tweetUrls, ...tweetUrls].map((url, index) => (
-              <div key={url}>
+              <div key={`${url}-${index}`} aria-label={`Tweet ${index + 1}`}>
                 <TweetCard url={url} index={index} theme={theme} />
               </div>
             ))}
           </motion.div>
 
-          {/* reverse */}
           <motion.div
-            initial={{
-              y: "-50%",
-            }}
-            animate={{
-              y: 0,
-            }}
-            transition={{
-              duration: 60,
-              repeat: Infinity,
-              repeatType: "loop",
-              ease: "linear",
-            }}
-            className={`flex flex-col gap-4 pb-4`}
+            animate={{ y: ["-50%", "0%"] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="flex flex-col gap-4 pb-4"
+            aria-label="Tweet column scrolling down"
           >
             {[...tweetUrls, ...tweetUrls].map((url, index) => (
-              <div key={url}>
+              <div
+                key={`${url}-${index}-reverse`}
+                aria-label={`Tweet ${index + 1} (reverse column)`}
+              >
                 <TweetCard url={url} index={index} theme={theme} />
               </div>
             ))}

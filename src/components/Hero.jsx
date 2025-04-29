@@ -18,15 +18,23 @@ const Hero = () => {
   const scale = useTransform(scrollYProgress, [0, 1], [0.95, 1]);
 
   return (
-    <section className="relative min-h-[calc(100vh-5rem)] overflow-hidden">
+    <section
+      className="relative min-h-[calc(100vh-5rem)] overflow-hidden"
+      aria-label="Hero Section"
+    >
       {/* background grid */}
       <div
         className={`absolute inset-0 pointer-events-none opacity-95 ${
           theme === "light-theme" ? "bg-grid-pattern" : "darkbg-grid-pattern"
         }`}
+        aria-hidden="true"
       />
 
-      <div className="absolute inset-0 z-5  hidden lg:block light-text">
+      {/* floating elements */}
+      <div
+        className="absolute inset-0 z-5 hidden lg:block light-text"
+        aria-hidden="true"
+      >
         <motion.div
           className={` top-[5%] left-[20%] interactiveElement ${
             theme === "light-theme" ? "bg-white/90 " : "bg-gray-900/40 "
@@ -34,8 +42,9 @@ const Hero = () => {
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 1.2 }}
+          aria-label="Peer Learning"
         >
-          <Users className="text-orange-500" />
+          <Users className="text-orange-500" aria-hidden="true" />
           <span className="font-semibold text-sm">Peer Learning</span>
         </motion.div>
 
@@ -46,8 +55,9 @@ const Hero = () => {
           initial={{ x: -80, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 1.4 }}
+          aria-label="Code Reviews"
         >
-          <Code className="text-green-500" />
+          <Code className="text-green-500" aria-hidden="true" />
           <span className="font-semibold text-sm">Code Reviews</span>
         </motion.div>
 
@@ -58,8 +68,9 @@ const Hero = () => {
           initial={{ x: 80, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 1.6 }}
+          aria-label="Virtual Hostel"
         >
-          <Home className="text-blue-500" />
+          <Home className="text-blue-500" aria-hidden="true" />
           <span className="font-semibold text-sm">Virtual Hostel</span>
         </motion.div>
 
@@ -70,8 +81,9 @@ const Hero = () => {
           initial={{ y: -80, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 1.8 }}
+          aria-label="Doubt Sessions"
         >
-          <HelpCircle className="text-purple-500" />
+          <HelpCircle className="text-purple-500" aria-hidden="true" />
           <span className="font-semibold text-sm">Doubt Sessions</span>
         </motion.div>
 
@@ -82,18 +94,23 @@ const Hero = () => {
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 2.0 }}
+          aria-label="Bounties"
         >
-          <Gift className="text-pink-500" />
+          <Gift className="text-pink-500" aria-hidden="true" />
           <span className="font-semibold text-sm">Bounties</span>
         </motion.div>
       </div>
 
-      <main className="relative flex flex-col justify-center items-center mt-20">
+      <main
+        className="relative flex flex-col justify-center items-center mt-20"
+        aria-label="Hero Main Content"
+      >
         <motion.p
           className={`inline-flex py-2 px-4 rounded-full tracking-wider font-semibold ${theme === "light-theme" ? "bg-[#f0f0f0] shadow-lg border border-slate-200 text-gray-700" : "bg-black-gradient"}`}
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6, ease: "easeOut" }}
+          aria-label="Trusted by 1.5 million learners"
         >
           &#123; Trusted By 1.5M Code Learners &#125;
         </motion.p>
@@ -103,6 +120,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
+          aria-label="Main headline: Consistency and community learning"
         >
           <span className="text-gradient">Consistency</span> And{" "}
           <span className="text-gradient">Community</span> Learning For Coding
@@ -114,43 +132,52 @@ const Hero = () => {
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
+          aria-label="Description paragraph about platform features"
         >
-          Content is every where, we provide a learning experience that is
+          Content is everywhere, we provide a learning experience that is
           unmatched. Bounties, Peer learning, Code reviews, Virtual hostel,
           Alumni Network, Doubt sessions, Group projects and so many other
           activities to keep you on track.
         </motion.p>
 
-        <CTA text="Check All Live Cohorts" className="mt-20 mb-10  z-10" />
+        <CTA
+          text="Check All Live Cohorts"
+          className="mt-20 mb-10 z-10"
+          aria-label="Check all live cohorts button"
+        />
 
         {/* Perspective wrapper */}
-        <div className=" w-full max-w-3xl lg:max-w-5xl perspective-[1200px] z-10 ">
+        <div className="w-full max-w-3xl lg:max-w-5xl perspective-[1200px] z-10">
           <motion.div
             ref={ref}
             className="aspect-video rounded-2xl relative origin-center border-[12px] border-zinc-900 overflow-hidden z-20"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            style={{
-              rotateX,
-              scale,
-            }}
+            style={{ rotateX, scale }}
             transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
+            aria-label="Promotional video"
           >
             {!showVideo ? (
               <button
                 className="w-full h-full relative group z-20 cursor-pointer"
                 onClick={() => setShowVideo(true)}
+                aria-label="Play promotional video"
               >
                 <img
                   src="https://img.youtube.com/vi/yG8JMlldoCE/hqdefault.jpg"
-                  alt="YouTube Video Thumbnail"
+                  alt="Video thumbnail"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black/50 flex items-center justify-center group-hover:bg-black/60 transition z-20">
+                <div
+                  className="absolute inset-0 bg-black/50 flex items-center justify-center group-hover:bg-black/60 transition z-20"
+                  role="img"
+                  aria-label="Play button over video thumbnail"
+                >
                   <svg
                     className="w-16 h-16 text-white"
                     fill="currentColor"
                     viewBox="0 0 84 84"
+                    aria-hidden="true"
                   >
                     <circle
                       cx="42"
@@ -171,6 +198,7 @@ const Hero = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 loading="lazy"
+                aria-label="Embedded YouTube video"
               ></iframe>
             )}
           </motion.div>

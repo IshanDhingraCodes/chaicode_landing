@@ -41,7 +41,7 @@ export default function PeerCodeReviewIcon() {
           &lt;/div&gt;
         </text>
 
-        {/* Microscope glass animation - constrained to terminal bounds */}
+        {/* Microscope glass animation*/}
         <motion.g
           initial={{ x: 10, opacity: 0, rotate: -15 }}
           animate={{
