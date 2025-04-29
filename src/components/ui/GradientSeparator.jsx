@@ -10,7 +10,7 @@ const GradientSeparator = () => {
         whileInView={{ scaleX: 1, opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="origin-center h-1 w-[80%] rounded-full bg-orange-400 shadow-[0_0_20px_4px_rgba(255,180,80,0.7)]"
+        className="origin-center h-1 w-[80%] rounded-full bg-orange-gradient shadow-[0_0_10px_2px_rgba(255,180,80,0.7)]"
       />
 
       {/* ambient light */}

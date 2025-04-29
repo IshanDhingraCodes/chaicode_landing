@@ -150,7 +150,7 @@ const Hero = () => {
         <div className="w-full max-w-3xl lg:max-w-5xl perspective-[1200px] z-10">
           <motion.div
             ref={ref}
-            className="aspect-video rounded-2xl relative origin-center border-[12px] border-zinc-900 overflow-hidden z-20"
+            className="aspect-video rounded-4xl relative origin-center border-[12px] border-zinc-900 overflow-hidden z-20"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             style={{ rotateX, scale }}
@@ -166,10 +166,10 @@ const Hero = () => {
                 <img
                   src="https://img.youtube.com/vi/yG8JMlldoCE/hqdefault.jpg"
                   alt="Video thumbnail"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-xl"
                 />
                 <div
-                  className="absolute inset-0 bg-black/50 flex items-center justify-center group-hover:bg-black/60 transition z-20"
+                  className="absolute inset-0 bg-black/50 flex items-center rounded-xl justify-center group-hover:bg-black/60 transition z-20"
                   role="img"
                   aria-label="Play button over video thumbnail"
                 >
