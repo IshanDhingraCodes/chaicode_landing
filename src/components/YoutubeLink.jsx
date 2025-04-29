@@ -3,6 +3,7 @@ import { youtube } from "../assets";
 import { ThemeConsumer } from "./ui/ThemeContext";
 import { youtubeCard } from "../constants";
 import { motion, AnimatePresence } from "motion/react";
+import GradientSeparator from "./ui/GradientSeparator";
 
 const YoutubeLink = () => {
   const { theme } = ThemeConsumer();
@@ -23,7 +24,8 @@ const YoutubeLink = () => {
 
   return (
     <section className="my-20" aria-label="YouTube Channels Section">
-      <div className="flex flex-col md:flex-row items-center justify- h-full w-full gap-10">
+      <GradientSeparator />
+      <div className="flex flex-col md:flex-row items-center justify- h-full w-full gap-10 -mt-15">
         <div
           className="w-full h-full"
           role="img"

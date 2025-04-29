@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { ThemeConsumer } from "./ui/ThemeContext";
 import { udemyCourses } from "../constants";
+import GradientSeparator from "./ui/GradientSeparator";
 
 const Udemy = () => {
   const [showVideo, setShowVideo] = useState({});
@@ -33,8 +34,9 @@ const Udemy = () => {
       className="max-w-7xl mx-auto my-20 relative"
       aria-label="Udemy Courses Section"
     >
+      <GradientSeparator />
       {/* Header */}
-      <div className="text-center max-w-3xl mx-auto relative">
+      <div className="text-center max-w-3xl mx-auto relative -mt-15">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mt-4">
           Our Courses On <span className="text-gradient">Udemy</span>
         </h1>

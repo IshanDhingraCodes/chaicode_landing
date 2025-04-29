@@ -4,6 +4,7 @@ import TweetCard from "./ui/Tweet-card";
 import { tweetUrls } from "../constants";
 import CTA from "./ui/CTA";
 import { motion } from "motion/react";
+import GradientSeparator from "./ui/GradientSeparator";
 
 export default function Tweets() {
   const { theme } = ThemeConsumer();
@@ -21,10 +22,11 @@ export default function Tweets() {
 
   return (
     <section
-      className="relative w-full mt-20 flex items-center justify-center"
+      className="relative w-full mt-20 flex flex-col items-center justify-center"
       aria-label="Community Tweet Highlights"
     >
-      <div className="relative w-full h-full flex flex-col items-center justify-start md:justify-center md:pb-[50%] lg:pb-[30%]">
+      <GradientSeparator />
+      <div className="relative w-full h-full flex flex-col items-center justify-start md:justify-center md:pb-[50%] lg:pb-[30%] -mt-20">
         <div className="max-w-xl mx-auto text-center">
           <p className="md:text-lg text-light mx-4">
             Love that we get from our community

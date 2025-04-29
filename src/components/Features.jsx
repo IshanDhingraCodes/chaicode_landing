@@ -5,6 +5,7 @@ import PeerCodeReviewIcon from "./ui/PeerCodeReviewIcon";
 import AlumniNetworkIcon from "./ui/AlumniNetworkIcon";
 import { motion } from "motion/react";
 import { ThemeConsumer } from "./ui/ThemeContext";
+import GradientSeparator from "./ui/GradientSeparator";
 
 const Features = () => {
   const { theme } = ThemeConsumer();
@@ -15,9 +16,10 @@ const Features = () => {
       aria-label="Cohort Features and Benefits"
       role="region"
     >
+      <GradientSeparator />
       {/* heading */}
       <div
-        className="max-w-3xl mx-auto text-center"
+        className="max-w-3xl mx-auto text-center -mt-15"
         role="banner"
         aria-labelledby="features-heading"
       >

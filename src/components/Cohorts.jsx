@@ -4,6 +4,7 @@ import { cohorts } from "../constants";
 import { CalendarDays, Clock } from "lucide-react";
 import Blinker from "./ui/Blinker";
 import { ThemeConsumer } from "./ui/ThemeContext";
+import GradientSeparator from "./ui/GradientSeparator";
 
 const Cohorts = () => {
   const { theme } = ThemeConsumer();
@@ -83,7 +84,8 @@ const Cohorts = () => {
   return (
     <>
       <div className="max-w-7xl mx-auto my-20">
-        <div className="max-w-xl mx-auto text-center">
+        <GradientSeparator />
+        <div className="max-w-xl mx-auto text-center -mt-20">
           <h1 className="text-6xl font-extrabold mt-5 tracking-wider text-gradient">
             Cohorts
           </h1>

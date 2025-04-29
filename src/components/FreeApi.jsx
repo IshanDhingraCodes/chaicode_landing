@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import { ThemeConsumer } from "./ui/ThemeContext";
+import GradientSeparator from "./ui/GradientSeparator";
 
 const FreeApi = () => {
   const { theme } = ThemeConsumer();
@@ -25,8 +26,9 @@ const FreeApi = () => {
   };
 
   return (
-    <section className="my-40">
-      <div className="max-w-3xl mx-auto text-center">
+    <section className="mt-40 mb-20">
+      <GradientSeparator />
+      <div className="max-w-3xl mx-auto text-center -mt-10">
         <h1
           className="text-4xl lg:text-5xl font-extrabold tracking-wider"
           aria-label="FreeAPI is open source and available to the community"
