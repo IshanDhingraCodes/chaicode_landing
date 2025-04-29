@@ -7,6 +7,7 @@ import {
   Cohorts,
   Discord,
   Features,
+  Feedback,
   Footer,
   FreeApi,
   Hero,
@@ -50,8 +51,9 @@ const App = () => {
             <Tweets />
             <LogoMarquee />
             <Cohorts />
-            <Features />
+            <Feedback />
             <Udemy />
+            <Features />
             <WhyChaiCode />
             <TopicCloud />
             <Discord />

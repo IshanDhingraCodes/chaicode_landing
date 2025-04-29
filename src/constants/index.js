@@ -185,6 +185,81 @@ export const udemyCourses = [
   },
 ];
 
+export const feedbacks = [
+  {
+    content:
+      "Day 2 of the #GenAI_Cohort and my mind is officially BLOWN! 🤯The first two classes were an absolute whirlwind of knowledge.",
+    name: "Kishlay Krishna",
+    title: "Student",
+  },
+  {
+    content:
+      "I am really thankful to @Hiteshdotcom and @piyushgarg_dev for putting together this amazing GenAI Cohort.",
+    name: "Indal Singh",
+    title: "Student",
+  },
+  {
+    content:
+      "Super excited to receive 'I Write Code' 👕.It is a true symbol of my dedication to the work I love 💻, and a reminder to keep pushing myself further 🚀.",
+    name: "Koushik Chowdhury",
+    title: "Student",
+  },
+  {
+    content:
+      "Day 2 of the Gen AI cohort was 🔥 Played around with different prompting styles like Alpaca, Instruct, ChatML — and even tried them out using Python. Also figured out how to hit the ChatGPT API. Fun stuff! 🤓🤖",
+    name: "Chetan Rakheja",
+    title: "Student",
+  },
+  {
+    content:
+      "They have a fabulous young team that is always full of ideas. Would recommend to everyone without doubt. Best wishes, folks!",
+    name: "Rajesh ",
+    title: "Founder",
+  },
+  {
+    content:
+      "Just won ₹10K in a giveaway! Feeling incredibly lucky and grateful. Thank you, @Hiteshdotcom and @piyushgarg_dev   for the fantastic giveaway.",
+    name: "Jahanwee",
+    title: "Student",
+  },
+  {
+    content:
+      "Day 2 of the #GenAI_Cohort and my mind is officially BLOWN! 🤯The first two classes were an absolute whirlwind of knowledge.",
+    name: "Kishlay Krishna",
+    title: "Student",
+  },
+  {
+    content:
+      "I am really thankful to @Hiteshdotcom and @piyushgarg_dev for putting together this amazing GenAI Cohort.",
+    name: "Indal Singh",
+    title: "Student",
+  },
+  {
+    content:
+      "Super excited to receive 'I Write Code' 👕.It is a true symbol of my dedication to the work I love 💻, and a reminder to keep pushing myself further 🚀.",
+    name: "Koushik Chowdhury",
+    title: "Student",
+  },
+  {
+    content:
+      "Day 2 of the Gen AI cohort was 🔥 Played around with different prompting styles like Alpaca, Instruct, ChatML — and even tried them out using Python. Also figured out how to hit the ChatGPT API. Fun stuff! 🤓🤖",
+    name: "Chetan Rakheja",
+    title: "Student",
+  },
+  {
+    content:
+      "They have a fabulous young team that is always full of ideas. Would recommend to everyone without doubt. Best wishes, folks!",
+    name: "Rajesh ",
+    title: "Founder",
+  },
+  {
+    content:
+      "Just won ₹10K in a giveaway! Feeling incredibly lucky and grateful. Thank you, @Hiteshdotcom and @piyushgarg_dev   for the fantastic giveaway.",
+    name: "Jahanwee",
+    title: "Student",
+  },
+];
+
 export const topics = [
   {
     name: "JavaScript",

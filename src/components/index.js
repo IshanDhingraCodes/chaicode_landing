@@ -13,6 +13,7 @@ import FreeApi from "./FreeApi";
 import AppDownload from "./AppDownload";
 import YoutubeLink from "./YoutubeLink";
 import Footer from "./Footer";
+import Feedback from "./Feedback";
 
 export {
   Preloader,
@@ -21,6 +22,7 @@ export {
   Tweets,
   LogoMarquee,
   Cohorts,
+  Feedback,
   Features,
   Udemy,
   WhyChaiCode,
