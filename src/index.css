@@ -70,6 +70,10 @@ body {
   color: var(--text);
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 .bg-primary {
   background-color: var(--primary);
 }

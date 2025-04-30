@@ -41,6 +41,7 @@ const Feedback = () => {
       className="w-full h-full flex flex-col items-center"
       role="main"
       aria-label="Student Testimonials Section"
+      id="feedback"
     >
       <div className="max-w-3xl mx-auto text-center mb-5 sm:mb-20">
         <p

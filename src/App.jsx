@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "./components/ui/ThemeContext";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "motion/react";
 import Lenis from "lenis";
 import {
@@ -13,6 +14,7 @@ import {
   Hero,
   LogoMarquee,
   Navbar,
+  PageNotFound,
   Preloader,
   TopicCloud,
   Tweets,
@@ -38,33 +40,43 @@ const App = () => {
   }, []);
 
   return (
-    <ThemeProvider>
-      <AnimatePresence mode="wait">
-        {isLoading && <Preloader />}
-      </AnimatePresence>
+    <BrowserRouter>
+      <ThemeProvider>
+        <AnimatePresence mode="wait">
+          {isLoading && <Preloader />}
+        </AnimatePresence>
 
-      {!isLoading && (
-        <div className="font-roboto select-none">
-          <main className=" max-w-[1440px] mx-auto px-4">
-            <Navbar />
-            <Hero />
-            <Tweets />
-            <LogoMarquee />
-            <Cohorts />
-            <Feedback />
-            <Udemy />
-            <Features />
-            <WhyChaiCode />
-            <TopicCloud />
-            <Discord />
-            <FreeApi />
-            <AppDownload />
-            <YoutubeLink />
-          </main>
-          <Footer />
-        </div>
-      )}
-    </ThemeProvider>
+        {!isLoading && (
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <div className="font-roboto select-none">
+                  <main className="max-w-[1440px] mx-auto px-4">
+                    <Navbar />
+                    <Hero />
+                    <Tweets />
+                    <LogoMarquee />
+                    <Cohorts />
+                    <Feedback />
+                    <Udemy />
+                    <Features />
+                    <WhyChaiCode />
+                    <TopicCloud />
+                    <Discord />
+                    <FreeApi />
+                    <AppDownload />
+                    <YoutubeLink />
+                  </main>
+                  <Footer />
+                </div>
+              }
+            />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        )}
+      </ThemeProvider>
+    </BrowserRouter>
   );
 };
 

@@ -14,6 +14,7 @@ import AppDownload from "./AppDownload";
 import YoutubeLink from "./YoutubeLink";
 import Footer from "./Footer";
 import Feedback from "./Feedback";
+import PageNotFound from "./PageNotFound";
 
 export {
   Preloader,
@@ -32,4 +33,5 @@ export {
   AppDownload,
   YoutubeLink,
   Footer,
+  PageNotFound,
 };

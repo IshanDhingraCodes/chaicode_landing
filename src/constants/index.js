@@ -46,7 +46,7 @@ export const NavLinks = [
   },
   {
     title: "Reviews",
-    link: "",
+    link: "#feedback",
   },
 ];
 
@@ -400,19 +400,19 @@ export const footerLinks = [
       },
       {
         name: "Privacy Policy",
-        link: "/",
+        link: "*",
       },
       {
         name: "Terms of Service",
-        link: "/",
+        link: "*",
       },
       {
         name: "Pricing Policy",
-        link: "/",
+        link: "*",
       },
       {
         name: "Refund Policy",
-        link: "/",
+        link: "*",
       },
     ],
   },
