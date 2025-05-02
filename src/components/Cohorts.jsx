@@ -236,7 +236,7 @@ const Cohorts = () => {
           </button>
 
           {/* Indicator Dots */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 md:gap-2.5 z-10 ">
+          {/* <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 md:gap-2.5 z-10 ">
             {cohorts.map((_, index) => (
               <button
                 key={index}
@@ -245,7 +245,7 @@ const Cohorts = () => {
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </>

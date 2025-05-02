@@ -38,7 +38,7 @@ const Feedback = () => {
 
   return (
     <div
-      className="w-full h-full flex flex-col items-center"
+      className="w-full h-full flex flex-col items-center overflow-hidden"
       role="main"
       aria-label="Student Testimonials Section"
       id="feedback"
@@ -141,7 +141,7 @@ const Column = ({ feedbacks, y = 0, className }) => {
   return (
     <motion.div
       style={{ y, willChange: "transform" }}
-      className={`w-full h-full flex flex-col items-center justify-center relative ${className}`}
+      className={`w-full h-full flex flex-col items-center justify-center relative overflow-hidden ${className}`}
       role="list"
     >
       {feedbacks.map((feedback, i) => (

@@ -37,7 +37,7 @@ const FreeApi = () => {
         </h1>
       </div>
 
-      <div className="flex lg:flex-row flex-col p-4 md:p-10 mt-3 xs:mt-10 gap-10 justify-center items-center">
+      <div className="flex lg:flex-row flex-col p-4 md:p-10 mt-3 xs:mt-10 gap-10 justify-center items-center overflow-hidden">
         {/* Video Section */}
         <motion.div
           className={`p-2 h-full w-full max-w-[550px] lg:w-[50%] rounded-3xl ${

@@ -38,7 +38,7 @@ const AppDownload = () => {
   return (
     <>
       <GradientSeparator />
-      <section className="flex md:flex-row flex-col px-4 md:px-10 mb-20 gap-10 -mt-10">
+      <section className="flex md:flex-row flex-col px-4 md:px-10 mb-20 gap-10 -mt-10 overflow-hidden">
         <div className="flex-1 flex justify-center items-start flex-col gap-8">
           <motion.h2
             className="text-4xl lg:text-5xl md:leading-15 lg:leading-[55px] font-semibold text-center lg:text-start text-gradient"
